@@ -42,28 +42,26 @@ const projects = [
 
 export const RightContent = () => {
   return (
-    <div className="pt-24 xl:pt-12">
+    <div className="pt-24 xl:pt-24">
       <main className="max-w-[720px] space-y-24">
         {/* About Section */}
         <section id="about" data-section>
-          <h2 className="xl:hidden tracking-[0.2em] text-white/60 text-xs uppercase mb-8">About</h2>
-          
           <div className="space-y-4">
-            <p className="text-white/80 leading-7">
+            <p className="text-white/80 leading-relaxed text-base">
               I'm a developer passionate about crafting accessible, pixel-perfect user 
               interfaces that blend thoughtful design with robust engineering. My favorite 
               work lies at the intersection of design and development, creating experiences 
               that not only look great but are meticulously built for performance and usability.
             </p>
             
-            <p className="text-white/80 leading-7">
-              Currently, I'm a Software Engineer specializing in 
+            <p className="text-white/80 leading-relaxed text-base">
+              Currently, I'm a Software Engineer at <span className="text-white font-medium">Allstate Sales Group</span>, specializing in 
               full-stack development. I contribute to the creation and maintenance of scalable 
               applications, ensuring our platform meets web accessibility 
               standards and best practices to deliver an inclusive user experience.
             </p>
             
-            <p className="text-white/80 leading-7">
+            <p className="text-white/80 leading-relaxed text-base">
               In the past, I've had the opportunity to develop software across a variety of 
               settings — from <span className="text-white font-medium">advertising agencies</span> and 
               <span className="text-white font-medium"> large corporations</span> to 
@@ -72,32 +70,35 @@ export const RightContent = () => {
               <span className="text-white font-medium"> comprehensive video course</span> a few years ago, guiding learners through building a web app with 
               the Spotify API.
             </p>
+            
+            <p className="text-white/80 leading-relaxed text-base">
+              In my spare time, I'm usually climbing, reading, hanging out with my wife and 
+              two cats, or running around Hyrule searching for <span className="text-white font-medium">Korok seeds</span>.
+            </p>
           </div>
         </section>
 
         {/* Experience Section */}
-        <section id="experience" data-section>
-          <h2 className="xl:hidden tracking-[0.2em] text-white/60 text-xs uppercase mb-8">Experience</h2>
-          
+        <section id="experience" data-section>          
           <div className="space-y-12">
             {experiences.map((experience, index) => (
               <div key={index} className="group">
-                <div className="flex gap-4">
-                  <div className="min-w-[120px]">
-                    <div className="text-white/40 text-xs uppercase tracking-wide">
+                <div className="grid grid-cols-4 gap-4">
+                  <div className="col-span-1">
+                    <div className="text-white/40 text-sm uppercase tracking-wide font-medium">
                       {experience.period}
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-white font-semibold group-hover:text-accent-cyan transition-colors">
-                      {experience.title} · {experience.company}
+                  <div className="col-span-3">
+                    <h3 className="text-white font-medium text-base mb-2 group-hover:text-accent-cyan transition-colors">
+                      {experience.title} · {experience.company} <ArrowUpRight className="w-4 h-4 inline ml-1" />
                     </h3>
-                    <p className="text-white/80 leading-7 mt-2">
+                    <p className="text-white/80 leading-relaxed text-base mb-3">
                       {experience.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mt-3">
+                    <div className="flex flex-wrap gap-2">
                       {experience.technologies.map((tech) => (
-                        <span key={tech} className="inline-flex items-center text-xs rounded-full px-2.5 py-1 bg-white/5 ring-1 ring-white/10 text-white/70">
+                        <span key={tech} className="inline-flex items-center text-xs rounded-full px-3 py-1 bg-teal-400/10 text-teal-300 font-medium">
                           {tech}
                         </span>
                       ))}
@@ -120,18 +121,16 @@ export const RightContent = () => {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" data-section>
-          <h2 className="xl:hidden tracking-[0.2em] text-white/60 text-xs uppercase mb-8">Projects</h2>
-          
+        <section id="projects" data-section>          
           <div className="space-y-12">
             {projects.map((project, index) => (
               <div key={index} className="group">
-                <div className="flex gap-4">
-                  <div className="min-w-[120px]">
-                    <div className="w-full h-16 bg-white/5 rounded"></div>
+                <div className="grid grid-cols-4 gap-4">
+                  <div className="col-span-1">
+                    <div className="w-full h-12 bg-white/5 rounded border border-white/10"></div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-white font-semibold group-hover:text-accent-cyan transition-colors flex items-center gap-2">
+                  <div className="col-span-3">
+                    <h3 className="text-white font-medium text-base mb-2 group-hover:text-accent-cyan transition-colors flex items-center gap-2">
                       {project.title}
                       <div className="flex gap-2">
                         {project.links.external && (
@@ -156,12 +155,12 @@ export const RightContent = () => {
                         )}
                       </div>
                     </h3>
-                    <p className="text-white/80 leading-7 mt-2">
+                    <p className="text-white/80 leading-relaxed text-base mb-3">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mt-3">
+                    <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
-                        <span key={tech} className="inline-flex items-center text-xs rounded-full px-2.5 py-1 bg-white/5 ring-1 ring-white/10 text-white/70">
+                        <span key={tech} className="inline-flex items-center text-xs rounded-full px-3 py-1 bg-teal-400/10 text-teal-300 font-medium">
                           {tech}
                         </span>
                       ))}

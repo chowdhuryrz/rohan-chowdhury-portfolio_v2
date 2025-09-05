@@ -38,8 +38,8 @@ export const PortfolioLayout = () => {
     <div className="min-h-screen">
       <MobileNav activeSection={activeSection} onNavigate={handleNavigate} />
       
-      <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-10">
-        <div className="lg:grid-cols-1 xl:grid xl:grid-cols-[520px_minmax(0,1fr)] xl:gap-x-24">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-24">
+        <div className="lg:grid-cols-1 xl:grid xl:grid-cols-[480px_1fr] xl:gap-x-24 xl:items-start">
           <LeftSidebar activeSection={activeSection} onNavigate={handleNavigate} />
           <RightContent />
         </div>

@@ -19,26 +19,26 @@ const socialLinks = [
 
 export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => {
   return (
-    <div className="hidden xl:block xl:sticky xl:top-24 xl:h-[calc(100vh-6rem)] xl:flex xl:flex-col xl:justify-between xl:py-12">
+    <div className="hidden xl:block xl:sticky xl:top-24 xl:h-[calc(100vh-6rem)] xl:flex xl:flex-col xl:justify-between xl:py-24">
       <div>
-        <h1 className="text-6xl font-extrabold tracking-tight leading-none text-white">
+        <h1 className="text-5xl font-bold tracking-tight leading-[1.1] text-white mb-3">
           Rohan Chowdhury
         </h1>
-        <h2 className="mt-3 text-xl font-semibold text-white/90">
+        <h2 className="text-xl font-medium text-white/90 mb-4">
           Software Engineer
         </h2>
-        <p className="mt-3 text-sm text-white/70 max-w-[34ch] leading-relaxed">
+        <p className="text-base text-white/70 max-w-[320px] leading-normal mb-16">
           I build reliable, data-driven web apps and automations.
         </p>
 
-        <nav className="mt-16">
-          <ul>
+        <nav className="mb-24">
+          <ul className="space-y-0">
             {navigationItems.map((item, index) => (
-              <li key={item.id} className="py-3">
-                {index > 0 && <div className="h-px bg-white/10 mb-3"></div>}
+              <li key={item.id}>
+                {index > 0 && <div className="h-px bg-white/10 my-4"></div>}
                 <button
                   onClick={() => onNavigate(item.id)}
-                  className={`text-xs uppercase tracking-[0.2em] transition-colors ${
+                  className={`text-xs uppercase tracking-widest font-medium py-3 transition-colors block ${
                     activeSection === item.id 
                       ? 'text-white' 
                       : 'text-white/60 hover:text-white/80'
@@ -52,7 +52,7 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
         </nav>
       </div>
 
-      <div className="mt-auto flex gap-5">
+      <div className="flex gap-5">
         {socialLinks.map(({ Icon, href, label }) => (
           <a
             key={label}
