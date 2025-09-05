@@ -23,7 +23,7 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
         <h1 className="text-5xl font-bold tracking-tight leading-[1.1] text-white mb-3">
           Rohan Chowdhury
         </h1>
-        <h2 className="text-xl font-normal text-white/90 mb-4">
+        <h2 className="text-xl font-light text-white/90 mb-4">
           Software Engineer
         </h2>
         <p className="text-base text-white/70 max-w-[320px] leading-normal mb-16">
