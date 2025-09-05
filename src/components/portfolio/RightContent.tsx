@@ -85,7 +85,7 @@ export const RightContent = () => {
               <div key={index} className="group">
                 <div className="grid grid-cols-4 gap-4">
                   <div className="col-span-1">
-                    <div className="text-white/40 text-sm uppercase tracking-wide font-medium">
+                    <div className="text-white/40 text-xs uppercase tracking-wide font-medium whitespace-nowrap">
                       {experience.period}
                     </div>
                   </div>
@@ -93,7 +93,7 @@ export const RightContent = () => {
                     <h3 className="text-white font-medium text-base mb-2 group-hover:text-accent-cyan transition-colors">
                       {experience.title} · {experience.company} <ArrowUpRight className="w-4 h-4 inline ml-1" />
                     </h3>
-                    <p className="text-white/80 leading-relaxed text-base mb-3">
+                    <p className="text-white/70 leading-relaxed text-sm mb-3">
                       {experience.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
