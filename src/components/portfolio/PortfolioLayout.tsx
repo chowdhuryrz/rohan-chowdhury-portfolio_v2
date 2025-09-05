@@ -9,16 +9,14 @@ export const PortfolioLayout = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['about', 'experience', 'projects'];
-      const scrollPosition = window.scrollY + 200; // Add offset for better detection
+      const scrollPosition = window.scrollY + 96; // Match navigation offset
       
-      for (const sectionId of sections) {
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
         const element = document.getElementById(sectionId);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(sectionId);
-            break;
-          }
+        if (element && scrollPosition >= element.offsetTop - 96) {
+          setActiveSection(sectionId);
+          break;
         }
       }
     };
@@ -30,7 +28,11 @@ export const PortfolioLayout = () => {
   const handleNavigate = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offsetTop = element.offsetTop - 96; // Align with left sidebar content
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
     }
   };
 
