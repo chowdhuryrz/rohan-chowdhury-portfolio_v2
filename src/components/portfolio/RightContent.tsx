@@ -88,42 +88,31 @@ export const RightContent = () => {
           
           <div className="space-y-12">
             {experiences.map((experience, index) => (
-              <a
-                key={index}
-                href={experience.companyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block group"
-              >
-                <div className="experience-card">
-                  <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-                    <div className="lg:col-span-1">
-                      <p className="text-sm text-text-muted uppercase tracking-wider">
-                        {experience.period}
-                      </p>
-                    </div>
+              <div key={index} className="experience-item">
+                <div className="experience-header">
+                  <div className="experience-period">
+                    {experience.period}
+                  </div>
+                  
+                  <div className="experience-content">
+                    <h3 className="experience-title">
+                      {experience.title} · {experience.company}
+                    </h3>
                     
-                    <div className="lg:col-span-3">
-                      <h3 className="text-text-primary font-medium mb-2 group-hover:text-accent-cyan transition-colors flex items-center gap-2">
-                        {experience.title} · {experience.company}
-                        <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                      </h3>
-                      
-                      <p className="text-text-secondary mb-4 leading-relaxed">
-                        {experience.description}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-2">
-                        {experience.technologies.map((tech) => (
-                          <span key={tech} className="tech-pill">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                    <p className="experience-description">
+                      {experience.description}
+                    </p>
+                    
+                    <div className="experience-tags">
+                      {experience.technologies.map((tech) => (
+                        <span key={tech} className="tech-pill">
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
           
@@ -149,14 +138,14 @@ export const RightContent = () => {
           
           <div className="space-y-12">
             {projects.map((project, index) => (
-              <div key={index} className="project-card">
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-                  <div className="lg:col-span-1">
-                    <div className="w-full h-24 lg:h-20 bg-accent-navy rounded border border-divider"></div>
+              <div key={index} className="experience-item">
+                <div className="experience-header">
+                  <div className="experience-period">
+                    <div className="w-full h-20 bg-accent-navy/20 rounded border border-divider/30"></div>
                   </div>
                   
-                  <div className="lg:col-span-3">
-                    <h3 className="text-text-primary font-medium mb-2 flex items-center gap-2">
+                  <div className="experience-content">
+                    <h3 className="experience-title flex items-center gap-2">
                       {project.title}
                       <div className="flex gap-2">
                         {project.links.external && (
@@ -182,11 +171,11 @@ export const RightContent = () => {
                       </div>
                     </h3>
                     
-                    <p className="text-text-secondary mb-4 leading-relaxed">
+                    <p className="experience-description">
                       {project.description}
                     </p>
                     
-                    <div className="flex flex-wrap gap-2">
+                    <div className="experience-tags">
                       {project.technologies.map((tech) => (
                         <span key={tech} className="tech-pill">
                           {tech}
@@ -229,7 +218,7 @@ export const RightContent = () => {
             <div className="flex flex-wrap gap-4">
               <a
                 href="mailto:rmc.2917@gmail.com"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent-navy/10 border border-accent-cyan/20 rounded-lg text-accent-cyan hover:bg-accent-cyan/10 transition-colors"
+                className="inline-flex items-center gap-2 text-accent-cyan hover:underline transition-colors"
               >
                 Email
               </a>
@@ -237,7 +226,7 @@ export const RightContent = () => {
                 href="https://www.linkedin.com/in/rohancho/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent-navy/10 border border-accent-cyan/20 rounded-lg text-accent-cyan hover:bg-accent-cyan/10 transition-colors"
+                className="inline-flex items-center gap-2 text-accent-cyan hover:underline transition-colors"
               >
                 LinkedIn
               </a>
@@ -245,7 +234,7 @@ export const RightContent = () => {
                 href="https://github.com/chowdhuryrz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent-navy/10 border border-accent-cyan/20 rounded-lg text-accent-cyan hover:bg-accent-cyan/10 transition-colors"
+                className="inline-flex items-center gap-2 text-accent-cyan hover:underline transition-colors"
               >
                 GitHub
               </a>

@@ -142,48 +142,34 @@
 }
 
 @layer components {
-  /* Navigation link animations */
+  /* Navigation styling - Brittany style */
   .nav-link {
-    @apply relative transition-colors duration-300;
-    font-weight: var(--font-medium);
+    @apply text-text-muted font-medium tracking-wider relative pb-4 block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
   .nav-link::before {
     content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: -2px;
-    left: 0;
-    background: hsl(var(--accent-cyan));
-    transition: width 0.3s ease;
-  }
-
-  .nav-link:hover::before,
-  .nav-link.active::before {
-    width: 100%;
-  }
-
-  .nav-link:hover {
-    color: hsl(var(--accent-cyan));
+    @apply absolute top-0 left-0 w-8 h-px bg-text-muted transition-all duration-300;
   }
 
   .nav-link.active {
-    color: hsl(var(--accent-cyan));
+    @apply text-text-primary;
   }
 
-  /* Tech stack pills */
-  .tech-pill {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
-    background: hsl(var(--accent-navy));
-    color: hsl(var(--accent-cyan));
-    border: 1px solid hsl(var(--border));
-    transition: var(--transition-smooth);
+  .nav-link.active::before {
+    @apply w-16 bg-accent-cyan;
   }
 
-  .tech-pill:hover {
-    background: hsl(var(--hover-bg));
-    transform: translateY(-1px);
+  .nav-link:hover {
+    @apply text-text-primary;
+  }
+
+  /* Social icons */
+  .social-icon {
+    @apply text-text-muted hover:text-text-primary transition-colors duration-300;
   }
 
   /* Section headers */
@@ -192,40 +178,45 @@
   }
 
   .section-header h2 {
-    @apply text-lg font-semibold whitespace-nowrap;
-    color: hsl(var(--text-primary));
-    font-weight: var(--font-semibold);
+    @apply text-text-primary font-bold text-lg uppercase tracking-wider;
   }
 
   .section-divider {
-    @apply flex-1 h-px;
-    background: hsl(var(--divider));
+    @apply flex-1 h-px bg-text-muted/30;
   }
 
-  /* Card hover effects */
-  .experience-card,
-  .project-card {
-    @apply p-6 rounded-lg transition-all duration-300 cursor-pointer;
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--border));
+  /* Tech stack pills - minimal styling */
+  .tech-pill {
+    @apply inline-block px-3 py-1 bg-accent-cyan/10 text-accent-cyan text-sm rounded-full;
   }
 
-  .experience-card:hover,
-  .project-card:hover {
-    background: hsl(var(--card-hover));
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-subtle);
+  /* Experience and Project Styling - inline, no cards */
+  .experience-item {
+    @apply mb-12 group;
   }
 
-  /* Social icons */
-  .social-icon {
-    @apply w-6 h-6 transition-all duration-300;
-    color: hsl(var(--text-muted));
+  .experience-header {
+    @apply grid grid-cols-1 lg:grid-cols-4 gap-4 mb-4;
   }
 
-  .social-icon:hover {
-    color: hsl(var(--accent-cyan));
-    transform: translateY(-2px);
+  .experience-period {
+    @apply text-sm text-text-muted uppercase tracking-wider lg:col-span-1;
+  }
+
+  .experience-content {
+    @apply lg:col-span-3;
+  }
+
+  .experience-title {
+    @apply text-text-primary font-medium mb-2 group-hover:text-accent-cyan transition-colors;
+  }
+
+  .experience-description {
+    @apply text-text-secondary mb-4 leading-relaxed;
+  }
+
+  .experience-tags {
+    @apply flex flex-wrap gap-2;
   }
 
   /* Smooth fade-in animation */

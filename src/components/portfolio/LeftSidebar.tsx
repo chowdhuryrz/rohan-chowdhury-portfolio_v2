@@ -37,7 +37,7 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
               <li key={item.id}>
                 <button
                   onClick={() => onNavigate(item.id)}
-                  className={`nav-link text-sm uppercase tracking-widest ${
+                  className={`nav-link ${
                     activeSection === item.id ? 'active' : ''
                   }`}
                 >
