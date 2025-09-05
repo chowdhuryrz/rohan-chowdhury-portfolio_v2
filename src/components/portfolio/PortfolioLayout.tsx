@@ -41,7 +41,7 @@ export const PortfolioLayout = () => {
       <MobileNav activeSection={activeSection} onNavigate={handleNavigate} />
       
       <div className="max-w-[1200px] mx-auto px-2 md:px-4 lg:px-6">
-        <div className="lg:grid-cols-1 xl:grid xl:grid-cols-[480px_1fr] xl:gap-x-4 xl:items-start">
+        <div className="lg:grid-cols-1 xl:grid xl:grid-cols-2 xl:gap-x-4 xl:items-start">
           <LeftSidebar activeSection={activeSection} onNavigate={handleNavigate} />
           <RightContent />
         </div>
