@@ -15,25 +15,53 @@ export const EXPERIENCES = [
     description: 'Taught 1,000+ students frontend development best practices including responsive design, API requests, debugging, and version control. Enhanced comprehension of advanced JavaScript concepts through live coding and examples. Improved student project quality by building interactive React interfaces with animations and transitions.',
     technologies: ['JavaScript', 'React', 'Git', 'GitHub', 'HTML', 'CSS'],
   },
-  {
-    period: '2021 — 2022',
-    title: 'Project Lead',
-    company: 'Empor',
-    companyUrl: 'https://empor.ca',
-    description: 'Led the development of a full-stack marketplace app for 1,000+ university students. Built with Next.js, TypeScript, Prisma, and Supabase for the frontend and database, and Spring Boot for backend services. Oversaw design, deployment, and integration of authentication and marketplace features.',
-    technologies: ['Next.js', 'TypeScript', 'Supabase', 'Prisma', 'Spring Boot'],
-  },
-  {
-    period: '2021 — 2022',
-    title: 'Full-Stack Developer',
-    company: 'McGill Scheduler',
-    companyUrl: 'https://mcgillscheduler.vercel.app',
-    description: 'Developed a web app that streamlined academic planning for 1,000+ McGill students. Built with React and Spring Boot, with PostgreSQL for persistence. Deployed production-ready systems with a RESTful backend and responsive UI.',
-    technologies: ['React', 'Spring Boot', 'PostgreSQL'],
-  },
 ] as const;
 
-export const PROJECTS = [] as const;
+export const PROJECTS = [
+  {
+    title: 'Build a Spotify Connected App',
+    description: 'Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.',
+    technologies: ['React', 'Express', 'Spotify API', 'Heroku'],
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=300&fit=crop&auto=format',
+    links: {
+      external: 'https://buildaspotifyconnectedapp.vercel.app',
+      github: 'https://github.com/chowdhuryrz/spotify-connected-app'
+    }
+  },
+  {
+    title: 'Spotify Profile',
+    description: 'Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
+    technologies: ['React', 'Express', 'Spotify API', 'Heroku'],
+    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&auto=format',
+    stars: 694,
+    links: {
+      external: 'https://spotify-profile.vercel.app',
+      github: 'https://github.com/chowdhuryrz/spotify-profile'
+    }
+  },
+  {
+    title: 'Halcyon Theme',
+    description: 'Minimal dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.',
+    technologies: ['Gatsby', 'Styled Components', 'Netlify'],
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop&auto=format',
+    downloads: '100k+ installs',
+    links: {
+      external: 'https://halcyon-theme.netlify.app',
+      github: 'https://github.com/chowdhuryrz/halcyon-theme'
+    }
+  },
+  {
+    title: 'brittanychiang.com (v4)',
+    description: 'An old portfolio site built with Gatsby with 8k+ stars and 3k+ forks.',
+    technologies: ['Gatsby', 'Styled Components', 'Netlify'],
+    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop&auto=format',
+    stars: 8051,
+    links: {
+      external: 'https://brittanychiang.com',
+      github: 'https://github.com/chowdhuryrz/v4'
+    }
+  }
+] as const;
 
 export const ABOUT_SECTIONS = [
   "I'm a software engineer focused on creating digital systems that combine solid engineering with thoughtful design. My work has centered on building enterprise HR portals, automation tools, and full-stack applications that save teams hundreds of hours and reduce costly errors.",

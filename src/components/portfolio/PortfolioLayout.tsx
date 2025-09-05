@@ -16,9 +16,25 @@ export const PortfolioLayout = () => {
       for (let i = sections.length - 1; i >= 0; i--) {
         const sectionId = sections[i];
         const element = document.getElementById(sectionId);
-        if (element && scrollPosition >= element.offsetTop - NAVIGATION_OFFSET) {
-          setActiveSection(sectionId);
-          break;
+        
+        if (element) {
+          const sectionTop = element.offsetTop - NAVIGATION_OFFSET;
+          const sectionBottom = element.offsetTop + element.offsetHeight;
+          
+          // For the last section, activate it when we're near the bottom of the page
+          if (i === sections.length - 1) {
+            const documentHeight = document.documentElement.scrollHeight;
+            const windowHeight = window.innerHeight;
+            const isNearBottom = scrollPosition + windowHeight >= documentHeight - 100;
+            
+            if (scrollPosition >= sectionTop || isNearBottom) {
+              setActiveSection(sectionId);
+              break;
+            }
+          } else if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            setActiveSection(sectionId);
+            break;
+          }
         }
       }
     };

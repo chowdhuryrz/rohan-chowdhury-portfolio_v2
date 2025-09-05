@@ -1,11 +1,11 @@
-import { ExternalLink, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, ArrowUpRight, Star, Download } from 'lucide-react';
 import { EXPERIENCES, PROJECTS, ABOUT_SECTIONS } from '@/config/data';
 import { RESUME_URL, SOCIAL_LINKS } from '@/config/constants';
 
 export const RightContent = () => {
   return (
     <div className="pt-24 xl:pt-24">
-      <main className="max-w-[720px] space-y-24">
+      <main className="max-w-[720px] space-y-32">
         {/* About Section */}
         <section id="about" data-section>
           <div className="space-y-4">
@@ -72,7 +72,11 @@ export const RightContent = () => {
               <div key={index} className="group experience-card">
                 <div className="grid grid-cols-4 gap-4">
                   <div className="col-span-1">
-                    <div className="w-full h-12 bg-text-muted/10 rounded border border-text-muted/20 sticky top-8"></div>
+                    <img 
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full aspect-video object-cover rounded border border-text-muted/20 sticky top-8"
+                    />
                   </div>
                   <div className="col-span-3">
                     <h3 className="experience-title-link gap-2">
@@ -100,9 +104,25 @@ export const RightContent = () => {
                         )}
                       </div>
                     </h3>
+                    
                     <p className="text-text-secondary leading-relaxed text-sm font-light mb-3">
                       {project.description}
                     </p>
+                    
+                    {'stars' in project && (
+                      <div className="flex items-center gap-1 mb-3">
+                        <Star className="w-4 h-4 text-text-muted" />
+                        <span className="text-text-muted text-sm">{project.stars.toLocaleString()}</span>
+                      </div>
+                    )}
+                    
+                    {'downloads' in project && (
+                      <div className="flex items-center gap-1 mb-3">
+                        <Download className="w-4 h-4 text-text-muted" />
+                        <span className="text-text-muted text-sm">{project.downloads}</span>
+                      </div>
+                    )}
+                    
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
                         <span key={tech} className="tech-pill text-xs">
