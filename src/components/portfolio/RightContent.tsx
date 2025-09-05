@@ -183,6 +183,15 @@ export const RightContent = () => {
             </a>
           </div>
         </section>
+        
+        {/* Footer */}
+        <footer className="pt-16 pb-24">
+          <p className="text-white/50 text-sm leading-relaxed">
+            Loosely designed in <span className="text-white/70 font-medium">Figma</span> and coded in <span className="text-white/70 font-medium">Visual Studio Code</span> by 
+            yours truly. Built with <span className="text-white/70 font-medium">React</span> and <span className="text-white/70 font-medium">Tailwind CSS</span>, deployed with 
+            <span className="text-white/70 font-medium"> Vercel</span>. All text is set in the <span className="text-white/70 font-medium">Inter</span> typeface.
+          </p>
+        </footer>
       </main>
     </div>
   );
