@@ -13,7 +13,7 @@ export const RightContent = () => {
                 <p key={index} className="text-text-secondary leading-relaxed text-base font-light">
                   {paragraph.split(/(\bAllstate Sales Group\b|\bFrontend Simplified\b|\bMcGill Scheduler\b|\bEmpor\b|\bReact\b|\bNext\.js\b|\bTypeScript\b|\bNode\.js\b|\bPostgreSQL\b|\bAWS\b)/).map((part, partIndex) => {
                     if (['Allstate Sales Group', 'Frontend Simplified', 'McGill Scheduler', 'Empor', 'React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS'].includes(part)) {
-                      return <span key={partIndex} className="text-text-primary font-medium">{part}</span>;
+                      return <span key={partIndex} className="text-text-primary font-light">{part}</span>;
                     }
                     return part;
                   })}
@@ -38,7 +38,7 @@ export const RightContent = () => {
                       {experience.title} · {experience.company} 
                       <ArrowUpRight className="w-4 h-4 opacity-70 experience-arrow" />
                     </h3>
-                    <p className="text-text-secondary leading-relaxed text-base font-light mb-3">
+                    <p className="text-text-secondary leading-relaxed text-sm font-light mb-3">
                       {experience.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -100,7 +100,7 @@ export const RightContent = () => {
                         )}
                       </div>
                     </h3>
-                    <p className="text-text-secondary leading-relaxed text-base font-light mb-3">
+                    <p className="text-text-secondary leading-relaxed text-sm font-light mb-3">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
