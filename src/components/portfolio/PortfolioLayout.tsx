@@ -9,17 +9,17 @@ export const PortfolioLayout = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['about', 'experience', 'projects'];
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
+      const scrollPosition = window.scrollY + 200; // Add offset for better detection
       
-      if (currentSection) {
-        setActiveSection(currentSection);
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
       }
     };
 

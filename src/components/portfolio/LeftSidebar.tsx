@@ -42,10 +42,10 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
                       : 'text-white/60 hover:text-white/80'
                   }`}
                 >
-                  <div className={`absolute left-0 top-0 bottom-0 w-px transition-all ${
+                  <div className={`absolute left-0 top-0 bottom-0 w-px transition-all duration-300 ease-in-out ${
                     activeSection === item.id 
-                      ? 'bg-white' 
-                      : 'bg-white/20'
+                      ? 'bg-white opacity-100' 
+                      : 'bg-white/20 opacity-50'
                   }`}></div>
                   {item.label}
                 </button>
