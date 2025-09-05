@@ -144,23 +144,15 @@
 @layer components {
   /* Navigation styling - Brittany style */
   .nav-link {
-    @apply text-text-muted font-medium tracking-wider relative pb-4 block;
+    @apply text-text-muted font-medium tracking-wider relative py-4 block border-t border-text-muted/20;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-  }
-
-  .nav-link::before {
-    content: '';
-    @apply absolute top-0 left-0 w-8 h-px bg-text-muted transition-all duration-300;
+    transition: color 0.3s ease;
   }
 
   .nav-link.active {
     @apply text-text-primary;
-  }
-
-  .nav-link.active::before {
-    @apply w-16 bg-accent-cyan;
   }
 
   .nav-link:hover {
