@@ -35,15 +35,19 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
           <ul className="space-y-0">
             {navigationItems.map((item, index) => (
               <li key={item.id}>
-                {index > 0 && <div className="h-px bg-white/10 my-4"></div>}
                 <button
                   onClick={() => onNavigate(item.id)}
-                  className={`text-xs uppercase tracking-widest font-medium py-3 transition-colors block ${
+                  className={`relative text-xs uppercase tracking-widest font-medium py-3 pl-8 transition-colors block ${
                     activeSection === item.id 
                       ? 'text-white' 
                       : 'text-white/60 hover:text-white/80'
                   }`}
                 >
+                  <div className={`absolute left-0 top-0 bottom-0 w-px transition-all ${
+                    activeSection === item.id 
+                      ? 'bg-white' 
+                      : 'bg-white/20'
+                  }`}></div>
                   {item.label}
                 </button>
               </li>
