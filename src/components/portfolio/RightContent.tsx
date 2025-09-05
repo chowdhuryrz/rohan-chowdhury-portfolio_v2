@@ -1,44 +1,7 @@
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
-
-const experiences = [
-  {
-    period: 'Jan 2023 — Present',
-    title: 'Software Engineer',
-    company: 'Allstate Sales Group',
-    companyUrl: '#',
-    description: 'Built HR systems and data pipelines used across the organization. Reduced access management time 65% by building a centralized HR portal and admin console for 500+ users. Cut data-entry errors 78% and improved form efficiency 40% via 30+ validation rules. Integrated 12+ third-party APIs to eliminate manual handoffs.',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS', 'Azure', 'Docker', 'PowerBI'],
-  },
-  {
-    period: 'Jun 2022 — Nov 2022',
-    title: 'Frontend Developer',
-    company: 'Frontend Simplified',
-    companyUrl: '#',
-    description: 'Taught modern frontend and led hands-on builds. Helped 1,000+ students ship projects faster through live coding and debugging sessions. Taught responsive design, API requests, Promises/async patterns.',
-    technologies: ['React', 'JavaScript', 'Git', 'Chrome DevTools'],
-  },
-];
-
-const projects = [
-  {
-    title: 'McGill Scheduler',
-    description: 'Full-stack scheduling app used by 1,000+ students. React UI, Spring Boot REST API, PostgreSQL.',
-    technologies: ['React', 'Spring Boot', 'PostgreSQL'],
-    links: {
-      external: 'https://mcgillscheduler.vercel.app/',
-      github: 'https://github.com/Erik-Cupsa/McGill-Scheduler',
-    },
-  },
-  {
-    title: 'Empor',
-    description: 'Led marketplace for 1,000+ students with modern stack and typed data layer.',
-    technologies: ['Next.js', 'TypeScript', 'Prisma', 'Supabase', 'Spring Boot'],
-    links: {
-      external: 'https://empor.ca/',
-      github: null,
-    },
-  },
-];
+import { EXPERIENCES, PROJECTS, ABOUT_SECTIONS } from '@/config/data';
+import { RESUME_URL, SOCIAL_LINKS } from '@/config/constants';
+import SectionErrorBoundary from '@/components/SectionErrorBoundary';
 
 export const RightContent = () => {
   return (
@@ -46,42 +9,30 @@ export const RightContent = () => {
       <main className="max-w-[720px] space-y-24">
         {/* About Section */}
         <section id="about" data-section>
-          <div className="space-y-4">
-            <p className="text-white/80 leading-relaxed text-base">
-              I'm a developer passionate about crafting accessible, pixel-perfect user 
-              interfaces that blend thoughtful design with robust engineering. My favorite 
-              work lies at the intersection of design and development, creating experiences 
-              that not only look great but are meticulously built for performance and usability.
-            </p>
-            
-            <p className="text-white/80 leading-relaxed text-base">
-              Currently, I'm a Software Engineer at <span className="text-white font-medium">Allstate Sales Group</span>, specializing in 
-              full-stack development. I contribute to the creation and maintenance of scalable 
-              applications, ensuring our platform meets web accessibility 
-              standards and best practices to deliver an inclusive user experience.
-            </p>
-            
-            <p className="text-white/80 leading-relaxed text-base">
-              In the past, I've had the opportunity to develop software across a variety of 
-              settings — from <span className="text-white font-medium">advertising agencies</span> and 
-              <span className="text-white font-medium"> large corporations</span> to 
-              <span className="text-white font-medium"> start-ups</span> and 
-              <span className="text-white font-medium"> small digital product studios</span>. Additionally, I also released a 
-              <span className="text-white font-medium"> comprehensive video course</span> a few years ago, guiding learners through building a web app with 
-              the Spotify API.
-            </p>
-            
-            <p className="text-white/80 leading-relaxed text-base">
-              In my spare time, I'm usually climbing, reading, hanging out with my wife and 
-              two cats, or running around Hyrule searching for <span className="text-white font-medium">Korok seeds</span>.
-            </p>
-          </div>
+          <SectionErrorBoundary sectionName="About">
+            <div className="space-y-4">
+              {ABOUT_SECTIONS.map((paragraph, index) => (
+                <p key={index} className="text-white/80 leading-relaxed text-base">
+                  {paragraph.split(' ').map((word, wordIndex) => {
+                    if (word.includes('Allstate Sales Group') || word.includes('advertising') || 
+                        word.includes('corporations') || word.includes('start-ups') || 
+                        word.includes('studios') || word.includes('video course') || 
+                        word.includes('Korok seeds')) {
+                      return <span key={wordIndex} className="text-white font-medium">{word} </span>;
+                    }
+                    return word + ' ';
+                  })}
+                </p>
+              ))}
+            </div>
+          </SectionErrorBoundary>
         </section>
 
         {/* Experience Section */}
-        <section id="experience" data-section>          
-          <div className="space-y-12">
-            {experiences.map((experience, index) => (
+        <section id="experience" data-section>
+          <SectionErrorBoundary sectionName="Experience">
+            <div className="space-y-12">
+              {EXPERIENCES.map((experience, index) => (
               <div key={index} className="group">
                 <div className="grid grid-cols-4 gap-4">
                   <div className="col-span-1">
@@ -107,23 +58,25 @@ export const RightContent = () => {
                 </div>
               </div>
             ))}
-          </div>
-          
-          <div className="mt-12">
-            <a
-              href="mailto:rmc.2917@gmail.com"
-              className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
-            >
-              View Full Résumé
-              <ArrowUpRight className="w-4 h-4 inline ml-1" />
-            </a>
-          </div>
+            
+            <div className="mt-12">
+              <a
+                href={RESUME_URL}
+                className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
+              >
+                View Full Résumé
+                <ArrowUpRight className="w-4 h-4 inline ml-1" />
+              </a>
+            </div>
+            </div>
+          </SectionErrorBoundary>
         </section>
 
         {/* Projects Section */}
-        <section id="projects" data-section>          
-          <div className="space-y-12">
-            {projects.map((project, index) => (
+        <section id="projects" data-section>
+          <SectionErrorBoundary sectionName="Projects">
+            <div className="space-y-12">
+              {PROJECTS.map((project, index) => (
               <div key={index} className="group">
                 <div className="grid grid-cols-4 gap-4">
                   <div className="col-span-1">
@@ -169,19 +122,20 @@ export const RightContent = () => {
                 </div>
               </div>
             ))}
-          </div>
-          
-          <div className="mt-12">
-            <a
-              href="https://github.com/chowdhuryrz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
-            >
-              View Full Project Archive
-              <ArrowUpRight className="w-4 h-4 inline ml-1" />
-            </a>
-          </div>
+            
+            <div className="mt-12">
+              <a
+                href={SOCIAL_LINKS.find(link => link.name === 'github')?.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
+              >
+                View Full Project Archive
+                <ArrowUpRight className="w-4 h-4 inline ml-1" />
+              </a>
+            </div>
+            </div>
+          </SectionErrorBoundary>
         </section>
         
         {/* Footer */}
