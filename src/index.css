@@ -1,42 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Portfolio Design System - Dark Navy Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark navy gradient background */
+    --background: 218 35% 7%;
+    --background-gradient: linear-gradient(to bottom right, hsl(218, 35%, 7%), hsl(220, 40%, 4%));
+    --foreground: 218 20% 85%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Text colors */
+    --text-primary: 218 20% 95%;
+    --text-secondary: 218 15% 70%;
+    --text-muted: 218 10% 50%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Accent colors */
+    --accent-cyan: 175 70% 60%;
+    --accent-cyan-glow: 175 70% 60% / 0.3;
+    --accent-navy: 218 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Interactive states */
+    --hover-bg: 218 25% 12%;
+    --active-bg: 218 30% 18%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Borders and dividers */
+    --border: 218 20% 20%;
+    --divider: 218 15% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Cards and surfaces */
+    --card: 218 30% 10%;
+    --card-hover: 218 30% 12%;
 
     --radius: 0.5rem;
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(var(--accent-cyan-glow));
+    --shadow-subtle: 0 4px 12px hsl(218 35% 3% / 0.5);
+
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Font weights */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
 
     --sidebar-background: 0 0% 98%;
 
@@ -97,9 +111,136 @@ All colors MUST be HSL.
 @layer base {
   * {
     @apply border-border;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--background-gradient);
+    color: hsl(var(--text-primary));
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent-cyan));
+  }
+}
+
+@layer components {
+  /* Navigation link animations */
+  .nav-link {
+    @apply relative transition-colors duration-300;
+    font-weight: var(--font-medium);
+  }
+
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background: hsl(var(--accent-cyan));
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: 100%;
+  }
+
+  .nav-link:hover {
+    color: hsl(var(--accent-cyan));
+  }
+
+  .nav-link.active {
+    color: hsl(var(--accent-cyan));
+  }
+
+  /* Tech stack pills */
+  .tech-pill {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    background: hsl(var(--accent-navy));
+    color: hsl(var(--accent-cyan));
+    border: 1px solid hsl(var(--border));
+    transition: var(--transition-smooth);
+  }
+
+  .tech-pill:hover {
+    background: hsl(var(--hover-bg));
+    transform: translateY(-1px);
+  }
+
+  /* Section headers */
+  .section-header {
+    @apply flex items-center gap-4 mb-8;
+  }
+
+  .section-header h2 {
+    @apply text-lg font-semibold whitespace-nowrap;
+    color: hsl(var(--text-primary));
+    font-weight: var(--font-semibold);
+  }
+
+  .section-divider {
+    @apply flex-1 h-px;
+    background: hsl(var(--divider));
+  }
+
+  /* Card hover effects */
+  .experience-card,
+  .project-card {
+    @apply p-6 rounded-lg transition-all duration-300 cursor-pointer;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .experience-card:hover,
+  .project-card:hover {
+    background: hsl(var(--card-hover));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-subtle);
+  }
+
+  /* Social icons */
+  .social-icon {
+    @apply w-6 h-6 transition-all duration-300;
+    color: hsl(var(--text-muted));
+  }
+
+  .social-icon:hover {
+    color: hsl(var(--accent-cyan));
+    transform: translateY(-2px);
+  }
+
+  /* Smooth fade-in animation */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
