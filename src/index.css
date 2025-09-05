@@ -192,7 +192,7 @@
 
   /* Experience and Project Styling - inline, no cards */
   .experience-item {
-    @apply mb-12 group;
+    @apply mb-12;
   }
 
   .experience-header {

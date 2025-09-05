@@ -88,7 +88,7 @@ export const RightContent = () => {
           
           <div className="space-y-12">
             {experiences.map((experience, index) => (
-              <div key={index} className="experience-item">
+              <div key={index} className="experience-item group">
                 <div className="experience-header">
                   <div className="experience-period">
                     {experience.period}
@@ -138,7 +138,7 @@ export const RightContent = () => {
           
           <div className="space-y-12">
             {projects.map((project, index) => (
-              <div key={index} className="experience-item">
+              <div key={index} className="experience-item group">
                 <div className="experience-header">
                   <div className="experience-period">
                     <div className="w-full h-20 bg-accent-navy/20 rounded border border-divider/30"></div>
