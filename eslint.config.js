@@ -29,7 +29,7 @@ export default tseslint.config(
       "@typescript-eslint/no-empty-object-type": "off",
       "@typescript-eslint/no-require-imports": "off",
       "react-hooks/exhaustive-deps": "error",
-      "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
+      "no-console": "warn",
     },
   }
 );

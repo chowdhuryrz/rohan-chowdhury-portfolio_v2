@@ -25,7 +25,6 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
-          ui: ['@radix-ui/react-slot', '@radix-ui/react-toast'],
           icons: ['lucide-react'],
         },
       },
@@ -39,8 +38,6 @@ export default defineConfig(({ mode }) => ({
       'react-dom',
       'react-router-dom',
       'lucide-react',
-      '@radix-ui/react-slot',
-      '@radix-ui/react-toast',
     ],
   },
 }));

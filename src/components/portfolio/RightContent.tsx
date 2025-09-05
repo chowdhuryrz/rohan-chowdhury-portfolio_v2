@@ -1,7 +1,6 @@
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
 import { EXPERIENCES, PROJECTS, ABOUT_SECTIONS } from '@/config/data';
 import { RESUME_URL, SOCIAL_LINKS } from '@/config/constants';
-import SectionErrorBoundary from '@/components/SectionErrorBoundary';
 
 export const RightContent = () => {
   return (
@@ -9,8 +8,7 @@ export const RightContent = () => {
       <main className="max-w-[720px] space-y-24">
         {/* About Section */}
         <section id="about" data-section>
-          <SectionErrorBoundary sectionName="About">
-            <div className="space-y-4">
+          <div className="space-y-4">
               {ABOUT_SECTIONS.map((paragraph, index) => (
                 <p key={index} className="text-text-secondary leading-relaxed text-base font-light">
                   {paragraph.split(/(\bAllstate Sales Group\b|\bFrontend Simplified\b|\bMcGill Scheduler\b|\bEmpor\b|\bReact\b|\bNext\.js\b|\bTypeScript\b|\bNode\.js\b|\bPostgreSQL\b|\bAWS\b)/).map((part, partIndex) => {
@@ -21,14 +19,12 @@ export const RightContent = () => {
                   })}
                 </p>
               ))}
-            </div>
-          </SectionErrorBoundary>
+          </div>
         </section>
 
         {/* Experience Section */}
         <section id="experience" data-section>
-          <SectionErrorBoundary sectionName="Experience">
-            <div className="space-y-12">
+          <div className="space-y-12">
               {EXPERIENCES.map((experience, index) => (
               <div key={index} className="group experience-card">
                 <div className="grid grid-cols-4 gap-4">
@@ -66,14 +62,12 @@ export const RightContent = () => {
                 <ArrowUpRight className="w-4 h-4 inline ml-1" />
               </a>
             </div>
-            </div>
-          </SectionErrorBoundary>
+          </div>
         </section>
 
         {/* Projects Section */}
         <section id="projects" data-section>
-          <SectionErrorBoundary sectionName="Projects">
-            <div className="space-y-12">
+          <div className="space-y-12">
               {PROJECTS.map((project, index) => (
               <div key={index} className="group experience-card">
                 <div className="grid grid-cols-4 gap-4">
@@ -132,8 +126,7 @@ export const RightContent = () => {
                 <ArrowUpRight className="w-4 h-4 inline ml-1" />
               </a>
             </div>
-            </div>
-          </SectionErrorBoundary>
+          </div>
         </section>
         
         {/* Footer */}

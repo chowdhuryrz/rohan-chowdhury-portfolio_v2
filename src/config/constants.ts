@@ -1,5 +1,3 @@
-import { ENV } from './env';
-
 export const NAVIGATION_OFFSET = 96;
 export const SCROLL_THRESHOLD = 96;
 
@@ -23,7 +21,7 @@ export const SOCIAL_LINKS = [
 ] as const;
 
 export const CONTACT = {
-  email: ENV.CONTACT_EMAIL,
+  email: 'rmc.2917@gmail.com',
   name: 'Rohan Chowdhury',
   title: 'Software Engineer',
   tagline: 'I build reliable, data-driven web apps and automations.',
