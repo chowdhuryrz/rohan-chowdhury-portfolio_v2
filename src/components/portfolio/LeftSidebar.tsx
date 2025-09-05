@@ -18,7 +18,7 @@ const socialLinks = [
 
 export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => {
   return (
-    <div className="hidden xl:block xl:sticky xl:top-24 xl:h-[calc(100vh-6rem)] xl:flex xl:flex-col xl:justify-between xl:py-24">
+    <div className="hidden xl:block xl:sticky xl:top-24 xl:h-[calc(100vh-6rem)] xl:flex xl:flex-col xl:justify-between xl:pb-24">
       <div>
         <h1 className="text-5xl font-bold tracking-tight leading-[1.1] text-white mb-3">
           Rohan Chowdhury
