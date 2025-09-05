@@ -8,38 +8,39 @@
 
 @layer base {
   :root {
-    /* Dark navy gradient background */
-    --background: 218 35% 7%;
-    --background-gradient: linear-gradient(to bottom right, hsl(218, 35%, 7%), hsl(220, 40%, 4%));
-    --foreground: 218 20% 85%;
+    /* Dark grey background theme */
+    --background: 0 0% 8%;
+    --background-gradient: hsl(0, 0%, 8%);
+    --foreground: 0 0% 85%;
 
-    /* Text colors */
-    --text-primary: 218 20% 95%;
-    --text-secondary: 218 15% 70%;
-    --text-muted: 218 10% 50%;
+    /* Text colors - optimized for dark grey */
+    --text-primary: 0 0% 100%;
+    --text-secondary: 0 0% 71%;
+    --text-muted: 0 0% 58%;
 
-    /* Accent colors */
-    --accent-cyan: 175 70% 60%;
-    --accent-cyan-glow: 175 70% 60% / 0.3;
-    --accent-navy: 218 25% 15%;
+    /* Bright red accent colors */
+    --accent-red: 0 84% 60%;
+    --accent-red-glow: 0 84% 60% / 0.3;
+    --accent-red-hover: 0 84% 65%;
+    --accent-navy: 0 0% 15%;
 
-    /* Interactive states */
-    --hover-bg: 218 25% 12%;
-    --active-bg: 218 30% 18%;
+    /* Interactive states - grey theme */
+    --hover-bg: 0 0% 12%;
+    --active-bg: 0 0% 18%;
 
-    /* Borders and dividers */
-    --border: 218 20% 20%;
-    --divider: 218 15% 15%;
+    /* Borders and dividers - grey theme */
+    --border: 0 0% 20%;
+    --divider: 0 0% 15%;
 
-    /* Cards and surfaces */
-    --card: 218 30% 10%;
-    --card-hover: 218 30% 12%;
+    /* Cards and surfaces - grey theme */
+    --card: 0 0% 10%;
+    --card-hover: 0 0% 12%;
 
     --radius: 0.5rem;
 
-    /* Shadows */
-    --shadow-glow: 0 0 30px hsl(var(--accent-cyan-glow));
-    --shadow-subtle: 0 4px 12px hsl(218 35% 3% / 0.5);
+    /* Shadows - red accent */
+    --shadow-glow: 0 0 30px hsl(var(--accent-red-glow));
+    --shadow-subtle: 0 4px 12px hsl(0 0% 3% / 0.5);
 
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -122,6 +123,10 @@
     overflow-x: hidden;
   }
 
+  html {
+    background: hsl(var(--background));
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
@@ -137,22 +142,33 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--accent-cyan));
+    background: hsl(var(--accent-red));
   }
 }
 
 @layer components {
-  /* Navigation styling - Brittany style */
+  /* Navigation styling - matching screenshot exactly */
   .nav-link {
-    @apply text-text-muted font-medium tracking-widest relative py-3 block border-t border-text-muted/20 w-full text-left;
+    @apply text-text-muted font-medium tracking-widest relative py-3 pl-8 block w-full text-left transition-colors;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    transition: color 0.3s ease;
   }
 
-  .nav-link:first-child {
-    @apply border-t-0;
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: hsl(var(--text-muted) / 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .nav-link.active::before {
+    background: hsl(var(--text-primary));
+    box-shadow: 0 0 8px hsl(var(--text-primary) / 0.5);
   }
 
   .nav-link.active {
@@ -168,38 +184,40 @@
     @apply text-text-muted hover:text-text-primary transition-colors duration-300;
   }
 
-  /* Tech stack pills - minimal styling */
+  /* Tech stack pills - red accent styling */
   .tech-pill {
-    @apply inline-block px-3 py-1 bg-accent-cyan/10 text-accent-cyan rounded-full font-medium;
+    @apply inline-block px-3 py-1 rounded-full font-medium;
+    background-color: hsl(var(--accent-red) / 0.1);
+    color: hsl(var(--accent-red));
   }
 
-  /* Experience and Project Styling - inline, no cards */
-  .experience-item {
-    @apply mb-12;
+  /* Experience and Project Styling - fast glassmorphism hover */
+  .experience-card {
+    @apply p-4 -m-4 rounded-lg cursor-pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .experience-header {
-    @apply grid grid-cols-1 lg:grid-cols-4 gap-4 mb-4;
+  .experience-card:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
   }
 
-  .experience-period {
-    @apply text-sm text-text-muted uppercase tracking-wider lg:col-span-1;
+  .experience-title-link {
+    @apply text-text-primary font-medium text-base mb-2 flex items-center gap-1;
+    transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .experience-content {
-    @apply lg:col-span-3;
+  .experience-card:hover .experience-title-link {
+    color: hsl(var(--accent-red));
   }
 
-  .experience-title {
-    @apply text-text-primary font-medium mb-2 group-hover:text-accent-cyan transition-colors;
+  .experience-arrow {
+    transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .experience-description {
-    @apply text-text-secondary mb-4 leading-relaxed;
-  }
-
-  .experience-tags {
-    @apply flex flex-wrap gap-2;
+  .experience-card:hover .experience-arrow {
+    opacity: 1;
   }
 
   /* Smooth fade-in animation */

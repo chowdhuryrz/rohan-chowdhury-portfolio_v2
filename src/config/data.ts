@@ -1,48 +1,44 @@
 export const EXPERIENCES = [
   {
-    period: 'Jan 2023 — Present',
+    period: '2023 — PRESENT',
     title: 'Software Engineer',
     company: 'Allstate Sales Group',
     companyUrl: '#',
-    description: 'Built HR systems and data pipelines used across the organization. Reduced access management time 65% by building a centralized HR portal and admin console for 500+ users. Cut data-entry errors 78% and improved form efficiency 40% via 30+ validation rules. Integrated 12+ third-party APIs to eliminate manual handoffs.',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS', 'Azure', 'Docker', 'PowerBI'],
+    description: 'Built and maintained enterprise HR systems for 500+ employees. Designed 30+ custom validation rules to cut data entry errors by 78% and improve form efficiency by 40%. Integrated 12+ third-party APIs to automate workflows and eliminate manual handling. Increased system uptime from 97.3% → 99.8% with a replica database and staging pipeline. Delivered a KPI dashboard that improved productivity tracking across 8+ departments.',
+    technologies: ['TypeScript', 'React', 'Node.js', 'PostgreSQL', 'AWS', 'Docker', 'PowerBI'],
   },
   {
-    period: 'Jun 2022 — Nov 2022',
+    period: '2022 — 2022',
     title: 'Frontend Developer',
     company: 'Frontend Simplified',
     companyUrl: '#',
-    description: 'Taught modern frontend and led hands-on builds. Helped 1,000+ students ship projects faster through live coding and debugging sessions. Taught responsive design, API requests, Promises/async patterns.',
-    technologies: ['React', 'JavaScript', 'Git', 'Chrome DevTools'],
+    description: 'Taught 1,000+ students frontend development best practices including responsive design, API requests, debugging, and version control. Enhanced comprehension of advanced JavaScript concepts through live coding and examples. Improved student project quality by building interactive React interfaces with animations and transitions.',
+    technologies: ['JavaScript', 'React', 'Git', 'GitHub', 'HTML', 'CSS'],
+  },
+  {
+    period: '2021 — 2022',
+    title: 'Project Lead',
+    company: 'Empor',
+    companyUrl: 'https://empor.ca',
+    description: 'Led the development of a full-stack marketplace app for 1,000+ university students. Built with Next.js, TypeScript, Prisma, and Supabase for the frontend and database, and Spring Boot for backend services. Oversaw design, deployment, and integration of authentication and marketplace features.',
+    technologies: ['Next.js', 'TypeScript', 'Supabase', 'Prisma', 'Spring Boot'],
+  },
+  {
+    period: '2021 — 2022',
+    title: 'Full-Stack Developer',
+    company: 'McGill Scheduler',
+    companyUrl: 'https://mcgillscheduler.vercel.app',
+    description: 'Developed a web app that streamlined academic planning for 1,000+ McGill students. Built with React and Spring Boot, with PostgreSQL for persistence. Deployed production-ready systems with a RESTful backend and responsive UI.',
+    technologies: ['React', 'Spring Boot', 'PostgreSQL'],
   },
 ] as const;
 
-export const PROJECTS = [
-  {
-    title: 'McGill Scheduler',
-    description: 'Full-stack scheduling app used by 1,000+ students. React UI, Spring Boot REST API, PostgreSQL.',
-    technologies: ['React', 'Spring Boot', 'PostgreSQL'],
-    links: {
-      external: 'https://mcgillscheduler.vercel.app/',
-      github: 'https://github.com/Erik-Cupsa/McGill-Scheduler',
-    },
-  },
-  {
-    title: 'Empor',
-    description: 'Led marketplace for 1,000+ students with modern stack and typed data layer.',
-    technologies: ['Next.js', 'TypeScript', 'Prisma', 'Supabase', 'Spring Boot'],
-    links: {
-      external: 'https://empor.ca/',
-      github: null,
-    },
-  },
-] as const;
+export const PROJECTS = [] as const;
 
 export const ABOUT_SECTIONS = [
-  "I'm a developer passionate about crafting accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering. My favorite work lies at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.",
-  "Currently, I'm a Software Engineer at Allstate Sales Group, specializing in full-stack development. I contribute to the creation and maintenance of scalable applications, ensuring our platform meets web accessibility standards and best practices to deliver an inclusive user experience.",
-  "In the past, I've had the opportunity to develop software across a variety of settings — from advertising agencies and large corporations to start-ups and small digital product studios. Additionally, I also released a comprehensive video course a few years ago, guiding learners through building a web app with the Spotify API.",
-  "In my spare time, I'm usually climbing, reading, hanging out with my wife and two cats, or running around Hyrule searching for Korok seeds."
+  "I'm a software engineer focused on creating digital systems that combine solid engineering with thoughtful design. My work has centered on building enterprise HR portals, automation tools, and full-stack applications that save teams hundreds of hours and reduce costly errors.",
+  "At Allstate Sales Group, I engineered a centralized HR portal used by 500+ employees, cutting access management time by 65% and boosting uptime from 97.3% to 99.8%. I've also taught frontend development to 1,000+ students at Frontend Simplified, helping them master responsive design, debugging, and modern React workflows.",
+  "Beyond client work, I've led development of full-stack platforms like McGill Scheduler and Empor, serving 1,000+ university students. My toolkit spans React, Next.js, TypeScript, Node.js, PostgreSQL, and AWS, with experience integrating 12+ third-party APIs to streamline business processes."
 ] as const;
 
 export type Experience = typeof EXPERIENCES[number];

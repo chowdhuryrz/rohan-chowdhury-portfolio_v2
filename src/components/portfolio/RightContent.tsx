@@ -12,15 +12,12 @@ export const RightContent = () => {
           <SectionErrorBoundary sectionName="About">
             <div className="space-y-4">
               {ABOUT_SECTIONS.map((paragraph, index) => (
-                <p key={index} className="text-white/80 leading-relaxed text-base">
-                  {paragraph.split(' ').map((word, wordIndex) => {
-                    if (word.includes('Allstate Sales Group') || word.includes('advertising') || 
-                        word.includes('corporations') || word.includes('start-ups') || 
-                        word.includes('studios') || word.includes('video course') || 
-                        word.includes('Korok seeds')) {
-                      return <span key={wordIndex} className="text-white font-medium">{word} </span>;
+                <p key={index} className="text-text-secondary leading-relaxed text-base font-light">
+                  {paragraph.split(/(\bAllstate Sales Group\b|\bFrontend Simplified\b|\bMcGill Scheduler\b|\bEmpor\b|\bReact\b|\bNext\.js\b|\bTypeScript\b|\bNode\.js\b|\bPostgreSQL\b|\bAWS\b)/).map((part, partIndex) => {
+                    if (['Allstate Sales Group', 'Frontend Simplified', 'McGill Scheduler', 'Empor', 'React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS'].includes(part)) {
+                      return <span key={partIndex} className="text-text-primary font-medium">{part}</span>;
                     }
-                    return word + ' ';
+                    return part;
                   })}
                 </p>
               ))}
@@ -33,23 +30,24 @@ export const RightContent = () => {
           <SectionErrorBoundary sectionName="Experience">
             <div className="space-y-12">
               {EXPERIENCES.map((experience, index) => (
-              <div key={index} className="group">
+              <div key={index} className="group experience-card">
                 <div className="grid grid-cols-4 gap-4">
                   <div className="col-span-1">
-                    <div className="text-white/40 text-xs uppercase tracking-wide font-medium whitespace-nowrap">
+                    <div className="text-text-muted text-xs uppercase tracking-wide font-medium whitespace-nowrap sticky top-8">
                       {experience.period}
                     </div>
                   </div>
                   <div className="col-span-3">
-                    <h3 className="text-white font-medium text-base mb-2 group-hover:text-accent-cyan transition-colors">
-                      {experience.title} · {experience.company} <ArrowUpRight className="w-4 h-4 inline ml-1" />
+                    <h3 className="experience-title-link">
+                      {experience.title} · {experience.company} 
+                      <ArrowUpRight className="w-4 h-4 opacity-70 experience-arrow" />
                     </h3>
-                    <p className="text-white/70 leading-relaxed text-sm mb-3">
+                    <p className="text-text-secondary leading-relaxed text-base font-light mb-3">
                       {experience.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {experience.technologies.map((tech) => (
-                        <span key={tech} className="inline-flex items-center text-xs rounded-full px-3 py-1 bg-teal-400/10 text-teal-300 font-medium">
+                        <span key={tech} className="tech-pill text-xs">
                           {tech}
                         </span>
                       ))}
@@ -77,13 +75,13 @@ export const RightContent = () => {
           <SectionErrorBoundary sectionName="Projects">
             <div className="space-y-12">
               {PROJECTS.map((project, index) => (
-              <div key={index} className="group">
+              <div key={index} className="group experience-card">
                 <div className="grid grid-cols-4 gap-4">
                   <div className="col-span-1">
-                    <div className="w-full h-12 bg-white/5 rounded border border-white/10"></div>
+                    <div className="w-full h-12 bg-text-muted/10 rounded border border-text-muted/20 sticky top-8"></div>
                   </div>
                   <div className="col-span-3">
-                    <h3 className="text-white font-medium text-base mb-2 group-hover:text-accent-cyan transition-colors flex items-center gap-2">
+                    <h3 className="experience-title-link gap-2">
                       {project.title}
                       <div className="flex gap-2">
                         {project.links.external && (
@@ -91,7 +89,7 @@ export const RightContent = () => {
                             href={project.links.external}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white/60 hover:text-white transition-colors"
+                            className="text-text-muted hover:text-text-primary transition-colors"
                           >
                             <ExternalLink className="w-4 h-4" />
                           </a>
@@ -101,19 +99,19 @@ export const RightContent = () => {
                             href={project.links.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white/60 hover:text-white transition-colors"
+                            className="text-text-muted hover:text-text-primary transition-colors"
                           >
                             <ExternalLink className="w-4 h-4" />
                           </a>
                         )}
                       </div>
                     </h3>
-                    <p className="text-white/80 leading-relaxed text-base mb-3">
+                    <p className="text-text-secondary leading-relaxed text-base font-light mb-3">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
-                        <span key={tech} className="inline-flex items-center text-xs rounded-full px-3 py-1 bg-teal-400/10 text-teal-300 font-medium">
+                        <span key={tech} className="tech-pill text-xs">
                           {tech}
                         </span>
                       ))}

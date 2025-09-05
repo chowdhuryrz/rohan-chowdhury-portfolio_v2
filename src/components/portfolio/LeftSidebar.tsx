@@ -10,14 +10,14 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
   return (
     <div className="hidden xl:block xl:sticky xl:top-24 xl:h-[calc(100vh-6rem)] xl:flex xl:flex-col xl:justify-between xl:pb-24">
       <div>
-        <h1 className="text-5xl font-bold tracking-tight leading-[1.1] text-white mb-3">
+        <h1 className="text-5xl font-semibold tracking-tight leading-[1.1] text-white mb-3">
           {CONTACT.name}
         </h1>
-        <h2 className="text-xl font-light text-white/90 mb-4">
+        <h2 className="text-xl font-light text-white mb-4">
           {CONTACT.title}
         </h2>
-        <p className="text-base text-white/70 max-w-[320px] leading-normal mb-16">
-          {CONTACT.tagline}
+        <p className="text-lg font-light text-text-secondary max-w-[320px] leading-normal mb-16">
+          I build accessible, pixel-perfect digital experiences for the web.
         </p>
 
         <nav className="mb-24">
@@ -26,17 +26,8 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
               <li key={item.id}>
                 <button
                   onClick={() => onNavigate(item.id)}
-                  className={`relative text-xs uppercase tracking-widest font-medium py-3 pl-8 transition-colors block ${
-                    activeSection === item.id 
-                      ? 'text-white' 
-                      : 'text-white/60 hover:text-white/80'
-                  }`}
+                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
                 >
-                  <div className={`absolute left-0 top-0 bottom-0 w-px transition-all duration-300 ease-in-out ${
-                    activeSection === item.id 
-                      ? 'bg-white opacity-100' 
-                      : 'bg-white/20 opacity-50'
-                  }`}></div>
                   {item.label}
                 </button>
               </li>
@@ -54,7 +45,7 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/50 hover:text-white transition-colors"
+              className="social-icon"
               aria-label={label}
             >
               <Icon className="w-6 h-6" />
