@@ -19,26 +19,29 @@ const socialLinks = [
 
 export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => {
   return (
-    <div className="hidden lg:flex lg:w-1/2 lg:fixed lg:h-screen lg:py-24 lg:px-12 lg:flex-col lg:justify-between">
-      <div className="fade-in">
-        <h1 className="text-5xl font-bold text-text-primary mb-4 leading-tight">
+    <div className="hidden xl:block xl:sticky xl:top-24 xl:h-[calc(100vh-6rem)] xl:flex xl:flex-col xl:justify-between xl:py-12">
+      <div>
+        <h1 className="text-6xl font-extrabold tracking-tight leading-none text-white">
           Rohan Chowdhury
         </h1>
-        <h2 className="text-xl font-medium text-text-primary mb-6">
+        <h2 className="mt-3 text-xl font-semibold text-white/90">
           Software Engineer
         </h2>
-        <p className="text-text-secondary max-w-sm mb-16 leading-relaxed text-base">
+        <p className="mt-3 text-sm text-white/70 max-w-[34ch] leading-relaxed">
           I build reliable, data-driven web apps and automations.
         </p>
 
-        <nav className="hidden lg:block">
-          <ul className="space-y-0">
-            {navigationItems.map((item) => (
-              <li key={item.id}>
+        <nav className="mt-16">
+          <ul>
+            {navigationItems.map((item, index) => (
+              <li key={item.id} className="py-3">
+                {index > 0 && <div className="h-px bg-white/10 mb-3"></div>}
                 <button
                   onClick={() => onNavigate(item.id)}
-                  className={`nav-link ${
-                    activeSection === item.id ? 'active' : ''
+                  className={`text-xs uppercase tracking-[0.2em] transition-colors ${
+                    activeSection === item.id 
+                      ? 'text-white' 
+                      : 'text-white/60 hover:text-white/80'
                   }`}
                 >
                   {item.label}
@@ -49,14 +52,14 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
         </nav>
       </div>
 
-      <div className="flex space-x-5 mt-16 lg:mt-0">
+      <div className="mt-auto flex gap-5">
         {socialLinks.map(({ Icon, href, label }) => (
           <a
             key={label}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="social-icon"
+            className="text-white/50 hover:text-white transition-colors"
             aria-label={label}
           >
             <Icon className="w-6 h-6" />

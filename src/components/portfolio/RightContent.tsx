@@ -40,68 +40,64 @@ const projects = [
   },
 ];
 
-const education = [
-  {
-    period: 'Aug 2020 — May 2022',
-    school: 'Virginia Commonwealth University',
-    degree: 'B.S. Computer Science',
-    location: 'Richmond, VA',
-    coursework: ['Software Engineering Practice', 'Operating Systems', 'Computer Architecture', 'Model-Based Programming', 'Algorithms and Data Structures'],
-  },
-];
-
 export const RightContent = () => {
   return (
-    <div className="w-full lg:w-1/2 lg:ml-auto lg:py-24">
-      <main className="space-y-24 px-6 lg:px-12">
+    <div className="pt-24 xl:pt-12">
+      <main className="max-w-[720px] space-y-24">
         {/* About Section */}
-        <section id="about" data-section className="fade-in">
-          <p className="text-text-primary mb-4 leading-relaxed text-lg">
-            I'm a developer passionate about crafting accessible, pixel-perfect user 
-            interfaces that blend thoughtful design with robust engineering. My favorite 
-            work lies at the intersection of design and development, creating experiences 
-            that not only look great but are meticulously built for performance and usability.
-          </p>
+        <section id="about" data-section>
+          <h2 className="xl:hidden tracking-[0.2em] text-white/60 text-xs uppercase mb-8">About</h2>
           
-          <p className="text-text-secondary mb-4 leading-relaxed">
-            Currently, I'm a Software Engineer specializing in 
-            full-stack development. I contribute to the creation and maintenance of scalable 
-            applications, ensuring our platform meets web accessibility 
-            standards and best practices to deliver an inclusive user experience.
-          </p>
-          
-          <p className="text-text-secondary leading-relaxed">
-            In the past, I've had the opportunity to develop software across a variety of 
-            settings — from <span className="text-text-primary font-medium">advertising agencies</span> and 
-            <span className="text-text-primary font-medium"> large corporations</span> to 
-            <span className="text-text-primary font-medium"> start-ups</span> and 
-            <span className="text-text-primary font-medium"> small digital product studios</span>. Additionally, I also released a 
-            <span className="text-text-primary font-medium"> comprehensive video course</span> a few years ago, guiding learners through building a web app with 
-            the Spotify API.
-          </p>
+          <div className="space-y-4">
+            <p className="text-white/80 leading-7">
+              I'm a developer passionate about crafting accessible, pixel-perfect user 
+              interfaces that blend thoughtful design with robust engineering. My favorite 
+              work lies at the intersection of design and development, creating experiences 
+              that not only look great but are meticulously built for performance and usability.
+            </p>
+            
+            <p className="text-white/80 leading-7">
+              Currently, I'm a Software Engineer specializing in 
+              full-stack development. I contribute to the creation and maintenance of scalable 
+              applications, ensuring our platform meets web accessibility 
+              standards and best practices to deliver an inclusive user experience.
+            </p>
+            
+            <p className="text-white/80 leading-7">
+              In the past, I've had the opportunity to develop software across a variety of 
+              settings — from <span className="text-white font-medium">advertising agencies</span> and 
+              <span className="text-white font-medium"> large corporations</span> to 
+              <span className="text-white font-medium"> start-ups</span> and 
+              <span className="text-white font-medium"> small digital product studios</span>. Additionally, I also released a 
+              <span className="text-white font-medium"> comprehensive video course</span> a few years ago, guiding learners through building a web app with 
+              the Spotify API.
+            </p>
+          </div>
         </section>
 
         {/* Experience Section */}
-        <section id="experience" data-section className="fade-in">
+        <section id="experience" data-section>
+          <h2 className="xl:hidden tracking-[0.2em] text-white/60 text-xs uppercase mb-8">Experience</h2>
+          
           <div className="space-y-12">
             {experiences.map((experience, index) => (
-              <div key={index} className="experience-item group">
-                <div className="grid grid-cols-4 gap-4">
-                  <div className="col-span-1">
-                    <div className="text-xs text-text-muted uppercase tracking-wider font-medium">
+              <div key={index} className="group">
+                <div className="flex gap-4">
+                  <div className="min-w-[120px]">
+                    <div className="text-white/40 text-xs uppercase tracking-wide">
                       {experience.period}
                     </div>
                   </div>
-                  <div className="col-span-3">
-                    <h3 className="text-text-primary font-medium mb-2 group-hover:text-accent-cyan transition-colors">
+                  <div className="flex-1">
+                    <h3 className="text-white font-semibold group-hover:text-accent-cyan transition-colors">
                       {experience.title} · {experience.company}
                     </h3>
-                    <p className="text-text-secondary mb-4 leading-relaxed text-sm">
+                    <p className="text-white/80 leading-7 mt-2">
                       {experience.description}
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 mt-3">
                       {experience.technologies.map((tech) => (
-                        <span key={tech} className="tech-pill text-xs">
+                        <span key={tech} className="inline-flex items-center text-xs rounded-full px-2.5 py-1 bg-white/5 ring-1 ring-white/10 text-white/70">
                           {tech}
                         </span>
                       ))}
@@ -115,32 +111,27 @@ export const RightContent = () => {
           <div className="mt-12">
             <a
               href="mailto:rmc.2917@gmail.com"
-              className="inline-flex items-center gap-2 text-accent-cyan hover:underline transition-colors"
+              className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
             >
               View Full Résumé
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 inline ml-1" />
             </a>
           </div>
         </section>
 
         {/* Projects Section */}
-        <section id="projects" data-section className="fade-in">
-          <div className="lg:hidden mb-16">
-            <div className="section-header">
-              <h2>Projects</h2>
-              <div className="section-divider"></div>
-            </div>
-          </div>
+        <section id="projects" data-section>
+          <h2 className="xl:hidden tracking-[0.2em] text-white/60 text-xs uppercase mb-8">Projects</h2>
           
           <div className="space-y-12">
             {projects.map((project, index) => (
-              <div key={index} className="experience-item group">
-                <div className="grid grid-cols-4 gap-4">
-                  <div className="col-span-1">
-                    <div className="w-full h-16 bg-accent-navy/20 rounded border border-divider/30"></div>
+              <div key={index} className="group">
+                <div className="flex gap-4">
+                  <div className="min-w-[120px]">
+                    <div className="w-full h-16 bg-white/5 rounded"></div>
                   </div>
-                  <div className="col-span-3">
-                    <h3 className="text-text-primary font-medium mb-2 group-hover:text-accent-cyan transition-colors flex items-center gap-2">
+                  <div className="flex-1">
+                    <h3 className="text-white font-semibold group-hover:text-accent-cyan transition-colors flex items-center gap-2">
                       {project.title}
                       <div className="flex gap-2">
                         {project.links.external && (
@@ -148,7 +139,7 @@ export const RightContent = () => {
                             href={project.links.external}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-text-muted hover:text-accent-cyan transition-colors"
+                            className="text-white/60 hover:text-white transition-colors"
                           >
                             <ExternalLink className="w-4 h-4" />
                           </a>
@@ -158,19 +149,19 @@ export const RightContent = () => {
                             href={project.links.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-text-muted hover:text-accent-cyan transition-colors"
+                            className="text-white/60 hover:text-white transition-colors"
                           >
                             <ExternalLink className="w-4 h-4" />
                           </a>
                         )}
                       </div>
                     </h3>
-                    <p className="text-text-secondary mb-4 leading-relaxed text-sm">
+                    <p className="text-white/80 leading-7 mt-2">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 mt-3">
                       {project.technologies.map((tech) => (
-                        <span key={tech} className="tech-pill text-xs">
+                        <span key={tech} className="inline-flex items-center text-xs rounded-full px-2.5 py-1 bg-white/5 ring-1 ring-white/10 text-white/70">
                           {tech}
                         </span>
                       ))}
@@ -186,32 +177,27 @@ export const RightContent = () => {
               href="https://github.com/chowdhuryrz"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-accent-cyan hover:underline transition-colors"
+              className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
             >
               View Full Project Archive
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 inline ml-1" />
             </a>
           </div>
         </section>
 
         {/* Contact Section */}
-        <section id="contact" data-section className="fade-in">
-          <div className="lg:hidden mb-16">
-            <div className="section-header">
-              <h2>Contact</h2>
-              <div className="section-divider"></div>
-            </div>
-          </div>
+        <section id="contact" data-section>
+          <h2 className="xl:hidden tracking-[0.2em] text-white/60 text-xs uppercase mb-8">Contact</h2>
           
           <div className="space-y-8">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/80 leading-7">
               Let's work together. Email me or connect on LinkedIn.
             </p>
             
             <div className="flex flex-wrap gap-4">
               <a
                 href="mailto:rmc.2917@gmail.com"
-                className="inline-flex items-center gap-2 text-accent-cyan hover:underline transition-colors"
+                className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
               >
                 Email
               </a>
@@ -219,7 +205,7 @@ export const RightContent = () => {
                 href="https://www.linkedin.com/in/rohancho/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-accent-cyan hover:underline transition-colors"
+                className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
               >
                 LinkedIn
               </a>
@@ -227,7 +213,7 @@ export const RightContent = () => {
                 href="https://github.com/chowdhuryrz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-accent-cyan hover:underline transition-colors"
+                className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
               >
                 GitHub
               </a>

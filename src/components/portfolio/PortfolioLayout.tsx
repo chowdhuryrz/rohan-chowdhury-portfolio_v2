@@ -7,31 +7,27 @@ export const PortfolioLayout = () => {
   const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '-50% 0px -50% 0px',
-      threshold: 0,
-    };
-
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+    const handleScroll = () => {
+      const sections = ['about', 'experience', 'projects', 'contact'];
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
         }
+        return false;
       });
+      
+      if (currentSection) {
+        setActiveSection(currentSection);
+      }
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
-    const sections = document.querySelectorAll('[data-section]');
-    sections.forEach((section) => observer.observe(section));
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+  const handleNavigate = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -39,17 +35,14 @@ export const PortfolioLayout = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-portfolio font-inter">
-      <MobileNav 
-        activeSection={activeSection} 
-        onNavigate={scrollToSection}
-      />
-      <div className="max-w-7xl mx-auto px-6 lg:px-24 flex pt-20 lg:pt-0">
-        <LeftSidebar 
-          activeSection={activeSection} 
-          onNavigate={scrollToSection}
-        />
-        <RightContent />
+    <div className="min-h-screen">
+      <MobileNav activeSection={activeSection} onNavigate={handleNavigate} />
+      
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-10">
+        <div className="lg:grid-cols-1 xl:grid xl:grid-cols-[520px_minmax(0,1fr)] xl:gap-x-24">
+          <LeftSidebar activeSection={activeSection} onNavigate={handleNavigate} />
+          <RightContent />
+        </div>
       </div>
     </div>
   );
