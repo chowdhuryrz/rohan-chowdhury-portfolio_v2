@@ -9,14 +9,13 @@ const navigationItems = [
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
+  { id: 'education', label: 'Education' },
+  { id: 'contact', label: 'Contact' },
 ];
 
 const socialLinks = [
-  { Icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { Icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { Icon: CodepenIcon, href: 'https://codepen.io', label: 'CodePen' },
-  { Icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-  { Icon: BookOpen, href: 'https://goodreads.com', label: 'Goodreads' },
+  { Icon: Github, href: 'https://github.com/chowdhuryrz', label: 'GitHub' },
+  { Icon: Linkedin, href: 'https://www.linkedin.com/in/rohancho/', label: 'LinkedIn' },
 ];
 
 export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => {
@@ -24,13 +23,13 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
     <div className="hidden lg:flex lg:w-1/2 lg:fixed lg:h-screen lg:py-24 lg:flex-col lg:justify-between">
       <div className="fade-in">
         <h1 className="text-4xl lg:text-5xl font-bold text-text-primary mb-4">
-          Brittany Chiang
+          Rohan Chowdhury
         </h1>
         <h2 className="text-xl lg:text-2xl font-medium text-text-primary mb-4">
-          Front End Engineer
+          Software Engineer
         </h2>
         <p className="text-text-secondary max-w-xs mb-16 leading-relaxed">
-          I build accessible, pixel-perfect digital experiences for the web.
+          I build reliable, data-driven web apps and automations.
         </p>
 
         <nav className="hidden lg:block">

@@ -2,41 +2,51 @@ import { ExternalLink, ArrowUpRight } from 'lucide-react';
 
 const experiences = [
   {
-    period: '2024 — Present',
-    title: 'Senior Frontend Engineer, Accessibility',
-    company: 'Klaviyo',
-    companyUrl: 'https://klaviyo.com',
-    description: 'Build and maintain critical components used to construct Klaviyo\'s frontend, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices in web accessibility.',
-    technologies: ['JavaScript', 'TypeScript', 'React', 'Storybook'],
+    period: 'Jan 2023 — Present',
+    title: 'Software Engineer',
+    company: 'Allstate Sales Group',
+    companyUrl: '#',
+    description: 'Built HR systems and data pipelines used across the organization. Reduced access management time 65% by building a centralized HR portal and admin console for 500+ users. Cut data-entry errors 78% and improved form efficiency 40% via 30+ validation rules. Integrated 12+ third-party APIs to eliminate manual handoffs.',
+    technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS', 'Azure', 'Docker', 'PowerBI'],
   },
   {
-    period: '2018 — 2024',
-    title: 'Lead Engineer',
-    company: 'Upstatement',
-    companyUrl: 'https://upstatement.com',
-    description: 'Delivered high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more.',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'GraphQL'],
+    period: 'Jun 2022 — Nov 2022',
+    title: 'Frontend Developer',
+    company: 'Frontend Simplified',
+    companyUrl: '#',
+    description: 'Taught modern frontend and led hands-on builds. Helped 1,000+ students ship projects faster through live coding and debugging sessions. Taught responsive design, API requests, Promises/async patterns.',
+    technologies: ['React', 'JavaScript', 'Git', 'Chrome DevTools'],
   },
 ];
 
 const projects = [
   {
-    title: 'Build a Spotify Connected App',
-    description: 'Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the Web API, user authentication, Node.js, Express, React, Styled Components, and more.',
-    technologies: ['React', 'Node.js', 'Express', 'Spotify API'],
+    title: 'McGill Scheduler',
+    description: 'Full-stack scheduling app used by 1,000+ students. React UI, Spring Boot REST API, PostgreSQL.',
+    technologies: ['React', 'Spring Boot', 'PostgreSQL'],
     links: {
-      external: 'https://buildaspotifyapp.com',
-      github: 'https://github.com/bchiang7/spotify-profile',
+      external: 'https://mcgillscheduler.vercel.app/',
+      github: 'https://github.com/Erik-Cupsa/McGill-Scheduler',
     },
   },
   {
-    title: 'Halcyon Theme',
-    description: 'A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.',
-    technologies: ['VS Code', 'Sublime Text', 'Atom', 'iTerm2', 'Hyper'],
+    title: 'Empor',
+    description: 'Led marketplace for 1,000+ students with modern stack and typed data layer.',
+    technologies: ['Next.js', 'TypeScript', 'Prisma', 'Supabase', 'Spring Boot'],
     links: {
-      external: 'https://halcyon-theme.netlify.app',
-      github: 'https://github.com/bchiang7/halcyon-theme',
+      external: 'https://empor.ca/',
+      github: null,
     },
+  },
+];
+
+const education = [
+  {
+    period: 'Aug 2020 — May 2022',
+    school: 'Virginia Commonwealth University',
+    degree: 'B.S. Computer Science',
+    location: 'Richmond, VA',
+    coursework: ['Software Engineering Practice', 'Operating Systems', 'Computer Architecture', 'Model-Based Programming', 'Algorithms and Data Structures'],
   },
 ];
 
@@ -55,51 +65,14 @@ export const RightContent = () => {
           
           <div className="space-y-4 text-text-secondary leading-relaxed">
             <p>
-              I'm a developer passionate about crafting accessible, pixel-perfect user 
-              interfaces that blend thoughtful design with robust engineering. My favorite 
-              work lies at the intersection of design and development, creating experiences 
-              that not only look great but are meticulously built for performance and usability.
+              I'm a software engineer focused on React/Next.js frontends, TypeScript/Node backends, 
+              and automation at scale. At Allstate Sales Group I shipped a centralized HR portal 
+              used by 500+ employees, integrated 12+ third-party APIs, and raised uptime from 97.3% 
+              to 99.8% with a replica database and automated staging.
             </p>
             
             <p>
-              Currently, I'm a Senior Front-End Engineer at{' '}
-              <a 
-                href="https://klaviyo.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-accent-cyan hover:underline transition-colors"
-              >
-                Klaviyo
-              </a>
-              , specializing in accessibility. I contribute to the creation and maintenance 
-              of UI components that power Klaviyo's frontend, ensuring our platform meets 
-              web accessibility standards and best practices to deliver an inclusive user experience.
-            </p>
-            
-            <p>
-              In the past, I've had the opportunity to develop software across a variety 
-              of settings — from advertising agencies and large corporations to start-ups 
-              and small digital product studios. Additionally, I also released a{' '}
-              <a 
-                href="#" 
-                className="text-accent-cyan hover:underline transition-colors"
-              >
-                comprehensive video course
-              </a>
-              {' '}a few years ago, guiding learners through building a web app with 
-              the Spotify API.
-            </p>
-            
-            <p>
-              In my spare time, I'm usually climbing, reading, hanging out with my wife and 
-              two cats, or running around Hyrule searching for{' '}
-              <a 
-                href="#" 
-                className="text-accent-cyan hover:underline transition-colors"
-              >
-                Korok seeds
-              </a>
-              .
+              I like systems that eliminate manual work and surface real-time KPIs.
             </p>
           </div>
         </section>
@@ -156,9 +129,7 @@ export const RightContent = () => {
           
           <div className="mt-12">
             <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:rmc.2917@gmail.com"
               className="inline-flex items-center gap-2 text-accent-cyan hover:underline transition-colors"
             >
               View Full Résumé
@@ -230,7 +201,7 @@ export const RightContent = () => {
           
           <div className="mt-12">
             <a
-              href="https://github.com"
+              href="https://github.com/chowdhuryrz"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-accent-cyan hover:underline transition-colors"
@@ -238,6 +209,85 @@ export const RightContent = () => {
               View Full Project Archive
               <ArrowUpRight className="w-4 h-4" />
             </a>
+          </div>
+        </section>
+
+        {/* Education Section */}
+        <section id="education" data-section className="fade-in">
+          <div className="lg:hidden mb-16">
+            <div className="section-header">
+              <h2>Education</h2>
+              <div className="section-divider"></div>
+            </div>
+          </div>
+          
+          <div className="space-y-12">
+            {education.map((edu, index) => (
+              <div key={index} className="experience-card">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+                  <div className="lg:col-span-1">
+                    <p className="text-sm text-text-muted uppercase tracking-wider">
+                      {edu.period}
+                    </p>
+                  </div>
+                  
+                  <div className="lg:col-span-3">
+                    <h3 className="text-text-primary font-medium mb-2">
+                      {edu.degree} · {edu.school}
+                    </h3>
+                    
+                    <p className="text-text-secondary mb-4 leading-relaxed">
+                      {edu.location}
+                    </p>
+                    
+                    <p className="text-text-secondary mb-4 leading-relaxed">
+                      <strong>Relevant Coursework:</strong> {edu.coursework.join(', ')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" data-section className="fade-in">
+          <div className="lg:hidden mb-16">
+            <div className="section-header">
+              <h2>Contact</h2>
+              <div className="section-divider"></div>
+            </div>
+          </div>
+          
+          <div className="space-y-8">
+            <p className="text-text-secondary leading-relaxed">
+              Let's work together. Email me or connect on LinkedIn.
+            </p>
+            
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="mailto:rmc.2917@gmail.com"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent-navy/10 border border-accent-cyan/20 rounded-lg text-accent-cyan hover:bg-accent-cyan/10 transition-colors"
+              >
+                Email
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rohancho/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent-navy/10 border border-accent-cyan/20 rounded-lg text-accent-cyan hover:bg-accent-cyan/10 transition-colors"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/chowdhuryrz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent-navy/10 border border-accent-cyan/20 rounded-lg text-accent-cyan hover:bg-accent-cyan/10 transition-colors"
+              >
+                GitHub
+              </a>
+            </div>
           </div>
         </section>
       </main>
