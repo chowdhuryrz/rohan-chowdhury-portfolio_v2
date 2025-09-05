@@ -212,44 +212,6 @@ export const RightContent = () => {
           </div>
         </section>
 
-        {/* Education Section */}
-        <section id="education" data-section className="fade-in">
-          <div className="lg:hidden mb-16">
-            <div className="section-header">
-              <h2>Education</h2>
-              <div className="section-divider"></div>
-            </div>
-          </div>
-          
-          <div className="space-y-12">
-            {education.map((edu, index) => (
-              <div key={index} className="experience-card">
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-                  <div className="lg:col-span-1">
-                    <p className="text-sm text-text-muted uppercase tracking-wider">
-                      {edu.period}
-                    </p>
-                  </div>
-                  
-                  <div className="lg:col-span-3">
-                    <h3 className="text-text-primary font-medium mb-2">
-                      {edu.degree} · {edu.school}
-                    </h3>
-                    
-                    <p className="text-text-secondary mb-4 leading-relaxed">
-                      {edu.location}
-                    </p>
-                    
-                    <p className="text-text-secondary mb-4 leading-relaxed">
-                      <strong>Relevant Coursework:</strong> {edu.coursework.join(', ')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Contact Section */}
         <section id="contact" data-section className="fade-in">
           <div className="lg:hidden mb-16">
