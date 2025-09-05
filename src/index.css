@@ -144,11 +144,15 @@
 @layer components {
   /* Navigation styling - Brittany style */
   .nav-link {
-    @apply text-text-muted font-medium tracking-wider relative py-4 block border-t border-text-muted/20;
+    @apply text-text-muted font-medium tracking-widest relative py-3 block border-t border-text-muted/20 w-full text-left;
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     transition: color 0.3s ease;
+  }
+
+  .nav-link:first-child {
+    @apply border-t-0;
   }
 
   .nav-link.active {
@@ -164,22 +168,9 @@
     @apply text-text-muted hover:text-text-primary transition-colors duration-300;
   }
 
-  /* Section headers */
-  .section-header {
-    @apply flex items-center gap-4 mb-8;
-  }
-
-  .section-header h2 {
-    @apply text-text-primary font-bold text-lg uppercase tracking-wider;
-  }
-
-  .section-divider {
-    @apply flex-1 h-px bg-text-muted/30;
-  }
-
   /* Tech stack pills - minimal styling */
   .tech-pill {
-    @apply inline-block px-3 py-1 bg-accent-cyan/10 text-accent-cyan text-sm rounded-full;
+    @apply inline-block px-3 py-1 bg-accent-cyan/10 text-accent-cyan rounded-full font-medium;
   }
 
   /* Experience and Project Styling - inline, no cards */
