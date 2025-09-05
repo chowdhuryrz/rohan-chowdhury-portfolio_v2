@@ -8,7 +8,7 @@ export const PortfolioLayout = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'experience', 'projects', 'contact'];
+      const sections = ['about', 'experience', 'projects'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {

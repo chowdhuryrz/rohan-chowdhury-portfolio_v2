@@ -183,42 +183,6 @@ export const RightContent = () => {
             </a>
           </div>
         </section>
-
-        {/* Contact Section */}
-        <section id="contact" data-section>
-          <h2 className="xl:hidden tracking-[0.2em] text-white/60 text-xs uppercase mb-8">Contact</h2>
-          
-          <div className="space-y-8">
-            <p className="text-white/80 leading-7">
-              Let's work together. Email me or connect on LinkedIn.
-            </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="mailto:rmc.2917@gmail.com"
-                className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
-              >
-                Email
-              </a>
-              <a
-                href="https://www.linkedin.com/in/rohancho/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://github.com/chowdhuryrz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
-              >
-                GitHub
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
   );
