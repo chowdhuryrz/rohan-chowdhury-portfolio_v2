@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { LeftSidebar } from './LeftSidebar';
 import { RightContent } from './RightContent';
 import { MobileNav } from './MobileNav';
+import { MobileHeader } from './MobileHeader';
 import { NAVIGATION_ITEMS, NAVIGATION_OFFSET, SCROLL_THRESHOLD } from '@/config/constants';
 import ErrorBoundary from '@/components/ErrorBoundary';
 
@@ -58,8 +59,9 @@ export const PortfolioLayout = () => {
     <ErrorBoundary>
       <div className="min-h-screen">
         <MobileNav activeSection={activeSection} onNavigate={handleNavigate} />
+        <MobileHeader />
         
-        <div className="max-w-[1200px] mx-auto px-2 md:px-4 lg:px-6">
+        <div className="max-w-[1200px] mx-auto px-0 xl:px-6">
           <div className="lg:grid-cols-1 xl:grid xl:grid-cols-2 xl:gap-x-4 xl:items-start">
             <LeftSidebar activeSection={activeSection} onNavigate={handleNavigate} />
             <RightContent />

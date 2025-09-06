@@ -4,8 +4,8 @@ import { RESUME_URL, SOCIAL_LINKS } from '@/config/constants';
 
 export const RightContent = () => {
   return (
-    <div className="pt-24 xl:pt-24">
-      <main className="max-w-[720px] space-y-32">
+    <div className="pt-4 xl:pt-24 px-6 xl:px-0">
+      <main className="max-w-[720px] space-y-12 xl:space-y-32">
         {/* About Section */}
         <section id="about" data-section>
           <div className="space-y-4">
@@ -24,16 +24,16 @@ export const RightContent = () => {
 
         {/* Experience Section */}
         <section id="experience" data-section>
-          <div className="space-y-12">
+          <div className="space-y-8 xl:space-y-12">
               {EXPERIENCES.map((experience, index) => (
               <div key={index} className="group experience-card">
-                <div className="grid grid-cols-4 gap-4">
-                  <div className="col-span-1">
-                    <div className="text-text-muted text-xs uppercase tracking-wide font-medium whitespace-nowrap sticky top-8">
+                <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
+                  <div className="xl:col-span-1">
+                    <div className="text-text-muted text-xs uppercase tracking-wide font-medium xl:whitespace-nowrap xl:sticky xl:top-8">
                       {experience.period}
                     </div>
                   </div>
-                  <div className="col-span-3">
+                  <div className="xl:col-span-3">
                     <h3 className="experience-title-link">
                       {experience.title} · {experience.company} 
                       <ArrowUpRight className="w-4 h-4 opacity-70 experience-arrow" />
@@ -67,18 +67,18 @@ export const RightContent = () => {
 
         {/* Projects Section */}
         <section id="projects" data-section>
-          <div className="space-y-12">
+          <div className="space-y-8 xl:space-y-12">
               {PROJECTS.map((project, index) => (
               <div key={index} className="group experience-card">
-                <div className="grid grid-cols-4 gap-4">
-                  <div className="col-span-1">
+                <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
+                  <div className="xl:col-span-1">
                     <img 
                       src={project.image}
                       alt={project.title}
-                      className="w-full aspect-video object-cover rounded border border-text-muted/20 sticky top-8"
+                      className="w-full aspect-video object-cover rounded border border-text-muted/20 xl:sticky xl:top-8"
                     />
                   </div>
-                  <div className="col-span-3">
+                  <div className="xl:col-span-3">
                     <h3 className="experience-title-link gap-2">
                       {project.title}
                       <div className="flex gap-2">
@@ -150,7 +150,7 @@ export const RightContent = () => {
         </section>
         
         {/* Footer */}
-        <footer className="pt-16 pb-24">
+        <footer className="pt-12 xl:pt-16 pb-16 xl:pb-24">
           <p className="text-white/50 text-sm leading-relaxed">
             Loosely designed in <span className="text-white/70 font-medium">Figma</span> and coded in <span className="text-white/70 font-medium">Visual Studio Code</span> by 
             yours truly. Built with <span className="text-white/70 font-medium">React</span> and <span className="text-white/70 font-medium">Tailwind CSS</span>, deployed with 

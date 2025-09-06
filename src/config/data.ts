@@ -19,46 +19,35 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: 'Build a Spotify Connected App',
-    description: 'Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.',
-    technologies: ['React', 'Express', 'Spotify API', 'Heroku'],
-    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=300&fit=crop&auto=format',
+    title: 'E-Commerce Platform',
+    description: 'A full-stack e-commerce web application with user authentication, product catalog, shopping cart, and payment processing. Features include responsive design, admin dashboard, and order management system.',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe API'],
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&auto=format',
     links: {
-      external: 'https://buildaspotifyconnectedapp.vercel.app',
-      github: 'https://github.com/chowdhuryrz/spotify-connected-app'
+      external: '#',
+      github: '#'
     }
   },
   {
-    title: 'Spotify Profile',
-    description: 'Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
-    technologies: ['React', 'Express', 'Spotify API', 'Heroku'],
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&auto=format',
-    stars: 694,
+    title: 'Task Management App',
+    description: 'A collaborative project management tool with real-time updates, team collaboration features, and progress tracking. Built with modern web technologies for optimal performance and user experience.',
+    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Socket.io'],
+    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop&auto=format',
+    stars: 245,
     links: {
-      external: 'https://spotify-profile.vercel.app',
-      github: 'https://github.com/chowdhuryrz/spotify-profile'
+      external: '#',
+      github: '#'
     }
   },
   {
-    title: 'Halcyon Theme',
-    description: 'Minimal dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.',
-    technologies: ['Gatsby', 'Styled Components', 'Netlify'],
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop&auto=format',
-    downloads: '100k+ installs',
+    title: 'Weather Dashboard',
+    description: 'A responsive weather application that displays current conditions, forecasts, and weather maps. Includes geolocation support, favorite locations, and detailed weather analytics.',
+    technologies: ['Vue.js', 'Tailwind CSS', 'Weather API', 'Chart.js'],
+    image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=300&fit=crop&auto=format',
+    downloads: '10k+ users',
     links: {
-      external: 'https://halcyon-theme.netlify.app',
-      github: 'https://github.com/chowdhuryrz/halcyon-theme'
-    }
-  },
-  {
-    title: 'brittanychiang.com (v4)',
-    description: 'An old portfolio site built with Gatsby with 8k+ stars and 3k+ forks.',
-    technologies: ['Gatsby', 'Styled Components', 'Netlify'],
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop&auto=format',
-    stars: 8051,
-    links: {
-      external: 'https://brittanychiang.com',
-      github: 'https://github.com/chowdhuryrz/v4'
+      external: '#',
+      github: '#'
     }
   }
 ] as const;
