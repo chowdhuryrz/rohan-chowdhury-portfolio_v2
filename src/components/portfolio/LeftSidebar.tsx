@@ -11,7 +11,12 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
     <div className="hidden xl:block xl:sticky xl:top-24 xl:h-[calc(100vh-6rem)] xl:flex xl:flex-col xl:justify-between xl:pb-24">
       <div>
         <h1 className="text-5xl font-semibold tracking-tight leading-[1.1] text-white mb-3">
-          {CONTACT.name}
+          <button
+            onClick={() => onNavigate('about')}
+            className="cursor-pointer"
+          >
+            {CONTACT.name}
+          </button>
         </h1>
         <h2 className="text-xl font-light text-white mb-4">
           {CONTACT.title}
