@@ -56,6 +56,8 @@ export const RightContent = () => {
             <div className="mt-12">
               <a
                 href={RESUME_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
               >
                 View Full Résumé

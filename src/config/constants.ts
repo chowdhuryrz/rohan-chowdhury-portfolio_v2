@@ -20,7 +20,7 @@ export const SOCIAL_LINKS = [
   },
   { 
     name: 'resume',
-    href: '/resume.pdf', 
+    href: '/Rohan_Chowdhury_Resume_Final.pdf', 
     label: 'Resume' 
   },
 ] as const;
@@ -32,7 +32,7 @@ export const CONTACT = {
   tagline: 'I build reliable, data-driven web apps and automations.',
 } as const;
 
-export const RESUME_URL = `mailto:${CONTACT.email}`;
+export const RESUME_URL = '/Rohan_Chowdhury_Resume_Final.pdf';
 
 export type NavigationItem = typeof NAVIGATION_ITEMS[number];
 export type SocialLink = typeof SOCIAL_LINKS[number];
