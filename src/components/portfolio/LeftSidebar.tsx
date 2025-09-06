@@ -16,7 +16,7 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
         <h2 className="text-xl font-light text-white mb-4">
           {CONTACT.title}
         </h2>
-        <p className="text-lg font-light text-text-secondary max-w-[320px] leading-normal mb-16">
+        <p className="text-base font-light text-text-secondary max-w-[320px] leading-normal mb-16">
           I build accessible, pixel-perfect digital experiences for the web.
         </p>
 

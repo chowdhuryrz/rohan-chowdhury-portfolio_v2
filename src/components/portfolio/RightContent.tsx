@@ -1,6 +1,6 @@
 import { ExternalLink, ArrowUpRight, Star, Download } from 'lucide-react';
 import { EXPERIENCES, PROJECTS, ABOUT_SECTIONS } from '@/config/data';
-import { RESUME_URL, SOCIAL_LINKS } from '@/config/constants';
+import { RESUME_URL, SOCIAL_LINKS, CONTACT } from '@/config/constants';
 
 export const RightContent = () => {
   return (
@@ -149,12 +149,24 @@ export const RightContent = () => {
           </div>
         </section>
         
+        {/* Contact */}
+        <section className="pt-8 xl:pt-12">
+          <p className="text-text-secondary leading-relaxed text-base font-light mb-6">
+            I'm always interested in new opportunities and interesting projects. Feel free to reach out if you'd like to connect.
+          </p>
+          <a
+            href={`mailto:${CONTACT.email}`}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 font-medium"
+          >
+            Get In Touch
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+        </section>
+
         {/* Footer */}
         <footer className="pt-12 xl:pt-16 pb-16 xl:pb-24">
           <p className="text-white/50 text-sm leading-relaxed">
-            Loosely designed in <span className="text-white/70 font-medium">Figma</span> and coded in <span className="text-white/70 font-medium">Visual Studio Code</span> by 
-            yours truly. Built with <span className="text-white/70 font-medium">React</span> and <span className="text-white/70 font-medium">Tailwind CSS</span>, deployed with 
-            <span className="text-white/70 font-medium"> Vercel</span>. All text is set in the <span className="text-white/70 font-medium">Inter</span> typeface.
+            © {new Date().getFullYear()} Rohan Chowdhury. Designed and built with attention to detail.
           </p>
         </footer>
       </main>
