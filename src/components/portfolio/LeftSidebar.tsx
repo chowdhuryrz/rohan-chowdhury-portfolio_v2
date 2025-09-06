@@ -1,4 +1,4 @@
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, FileText } from 'lucide-react';
 import { NAVIGATION_ITEMS, SOCIAL_LINKS, CONTACT } from '@/config/constants';
 
 interface LeftSidebarProps {
@@ -38,7 +38,7 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
 
       <div className="flex gap-5">
         {SOCIAL_LINKS.map(({ name, href, label }) => {
-          const Icon = name === 'github' ? Github : Linkedin;
+          const Icon = name === 'github' ? Github : name === 'linkedin' ? Linkedin : FileText;
           return (
             <a
               key={name}

@@ -18,6 +18,11 @@ export const SOCIAL_LINKS = [
     href: 'https://www.linkedin.com/in/rohancho/', 
     label: 'LinkedIn' 
   },
+  { 
+    name: 'resume',
+    href: '/resume.pdf', 
+    label: 'Resume' 
+  },
 ] as const;
 
 export const CONTACT = {
