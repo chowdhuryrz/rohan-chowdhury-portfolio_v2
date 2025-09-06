@@ -1,4 +1,4 @@
-import { ExternalLink, ArrowUpRight, Star, Download } from 'lucide-react';
+import { ExternalLink, ArrowUpRight, Star, Download, Github } from 'lucide-react';
 import { EXPERIENCES, PROJECTS, ABOUT_SECTIONS } from '@/config/data';
 import { RESUME_URL, SOCIAL_LINKS, CONTACT } from '@/config/constants';
 
@@ -101,7 +101,7 @@ export const RightContent = () => {
                             rel="noopener noreferrer"
                             className="text-text-muted hover:text-text-primary transition-colors"
                           >
-                            <ExternalLink className="w-4 h-4" />
+                            <Github className="w-4 h-4" />
                           </a>
                         )}
                       </div>

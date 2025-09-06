@@ -53,10 +53,10 @@ export const PROJECTS = [
 ] as const;
 
 export const ABOUT_SECTIONS = [
-  "I'm a software engineer focused on creating digital systems that blend reliable engineering with thoughtful design. My work spans enterprise HR portals, automation platforms, and full-stack applications that make organizations more efficient and resilient.",
-  "I've contributed to projects across different environments—enterprise teams, start-ups, and personal ventures—gaining experience in building solutions that scale and adapt to diverse needs. Beyond engineering, I've taught frontend development to aspiring developers, helping them build strong foundations in React and modern web practices.",
-  "My toolkit includes React, Next.js, TypeScript, Node.js, PostgreSQL, and AWS, and I enjoy connecting systems through third-party APIs to streamline workflows and eliminate inefficiencies. I'm especially drawn to roles where design and engineering intersect, creating products that are both usable and high-performing.",
-  "Outside of coding, I stay sharp by working out and working on cars—two areas that keep me disciplined, detail-oriented, and always learning."
+  "I'm a software engineer who loves building digital systems that actually work well and look good doing it. I've worked on everything from enterprise HR portals to automation platforms, always focusing on making things more efficient and reliable for the people using them.",
+  "I've gotten to work in different environments - big enterprise teams, scrappy start-ups, and my own side projects. Each one taught me something new about building software that can grow and adapt. I've also spent time teaching frontend development, which honestly made me a better developer since explaining concepts forces you to really understand them.",
+  "My go-to tools are React, Next.js, TypeScript, Node.js, PostgreSQL, and AWS. I really enjoy the puzzle of connecting different systems through APIs to automate workflows that used to be manual headaches. What gets me most excited are projects where good design meets solid engineering.",
+  "When I'm not coding, you'll probably find me at the gym or under the hood of a car. Both keep me grounded and remind me that the best solutions usually come from understanding how things actually work, not just how they're supposed to work."
 ] as const;
 
 export type Experience = typeof EXPERIENCES[number];

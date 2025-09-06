@@ -1,4 +1,4 @@
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, FileText } from 'lucide-react';
 import { CONTACT, SOCIAL_LINKS } from '@/config/constants';
 
 export const MobileHeader = () => {
@@ -14,9 +14,9 @@ export const MobileHeader = () => {
         I build accessible, pixel-perfect digital experiences for the web.
       </p>
 
-      <div className="flex gap-5">
+      <div className="flex gap-5 mb-24">
         {SOCIAL_LINKS.map(({ name, href, label }) => {
-          const Icon = name === 'github' ? Github : Linkedin;
+          const Icon = name === 'github' ? Github : name === 'linkedin' ? Linkedin : FileText;
           return (
             <a
               key={name}
