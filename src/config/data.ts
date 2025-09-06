@@ -53,9 +53,10 @@ export const PROJECTS = [
 ] as const;
 
 export const ABOUT_SECTIONS = [
-  "I'm a software engineer focused on creating digital systems that combine solid engineering with thoughtful design. My work has centered on building enterprise HR portals, automation tools, and full-stack applications that save teams hundreds of hours and reduce costly errors.",
-  "At Allstate Sales Group, I engineered a centralized HR portal used by 500+ employees, cutting access management time by 65% and boosting uptime from 97.3% to 99.8%. I've also taught frontend development to 1,000+ students at Frontend Simplified, helping them master responsive design, debugging, and modern React workflows.",
-  "Beyond client work, I've led development of full-stack platforms like McGill Scheduler and Empor, serving 1,000+ university students. My toolkit spans React, Next.js, TypeScript, Node.js, PostgreSQL, and AWS, with experience integrating 12+ third-party APIs to streamline business processes."
+  "I'm a software engineer focused on creating digital systems that blend reliable engineering with thoughtful design. My work spans enterprise HR portals, automation platforms, and full-stack applications that make organizations more efficient and resilient.",
+  "I've contributed to projects across different environments—enterprise teams, start-ups, and personal ventures—gaining experience in building solutions that scale and adapt to diverse needs. Beyond engineering, I've taught frontend development to aspiring developers, helping them build strong foundations in React and modern web practices.",
+  "My toolkit includes React, Next.js, TypeScript, Node.js, PostgreSQL, and AWS, and I enjoy connecting systems through third-party APIs to streamline workflows and eliminate inefficiencies. I'm especially drawn to roles where design and engineering intersect, creating products that are both usable and high-performing.",
+  "Outside of coding, I stay sharp by working out and working on cars—two areas that keep me disciplined, detail-oriented, and always learning."
 ] as const;
 
 export type Experience = typeof EXPERIENCES[number];
