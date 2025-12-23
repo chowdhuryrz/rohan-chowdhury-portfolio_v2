@@ -74,10 +74,10 @@ export const RightContent = () => {
               <div key={index} className="group experience-card">
                 <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
                   <div className="xl:col-span-1">
-                    <img 
+                    <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full aspect-video object-cover rounded border border-text-muted/20 xl:sticky xl:top-8"
+                      className="w-full aspect-video object-contain rounded border border-text-muted/20 xl:sticky xl:top-8"
                     />
                   </div>
                   <div className="xl:col-span-3">
