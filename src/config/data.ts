@@ -1,6 +1,6 @@
 export const EXPERIENCES = [
   {
-    period: "2023 — PRESENT",
+    period: "JAN 2023 — SEP 2025",
     title: "Software Engineer",
     company: "Allstate Sales Group",
     companyUrl: "#",
@@ -18,7 +18,7 @@ export const EXPERIENCES = [
     ],
   },
   {
-    period: "2022 — 2022",
+    period: "JUN 2022 — NOV 2022",
     title: "Frontend Developer",
     company: "Frontend Simplified",
     companyUrl: "#",

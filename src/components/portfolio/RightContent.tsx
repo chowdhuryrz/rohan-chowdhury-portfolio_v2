@@ -60,7 +60,7 @@ export const RightContent = () => {
           <div className="space-y-8 xl:space-y-12">
             {EXPERIENCES.map((experience, index) => (
               <div key={index} className="group experience-card">
-                <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 xl:grid-cols-4 gap-10">
                   <div className="xl:col-span-1">
                     <div className="text-text-muted text-xs uppercase tracking-wide font-medium xl:whitespace-nowrap xl:sticky xl:top-8">
                       {experience.period}
@@ -69,7 +69,6 @@ export const RightContent = () => {
                   <div className="xl:col-span-3">
                     <h3 className="experience-title-link">
                       {experience.title} · {experience.company}
-                      <ArrowUpRight className="w-4 h-4 opacity-70 experience-arrow" />
                     </h3>
                     <p className="text-text-secondary leading-relaxed text-sm font-light mb-3">
                       {experience.description}
