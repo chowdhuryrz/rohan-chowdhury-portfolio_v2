@@ -47,6 +47,24 @@ export const PROJECTS = [
       github: "https://github.com/chowdhuryrz/signalist-stock-tracker-app",
     },
   },
+  {
+    title: "Ephemeral - Self-Destructing Messaging Platform",
+    description:
+      "A private, self-destructing chat room application built with Next.js and Upstash. Create secure chat rooms with unique identities, send real-time messages, and destroy all conversation history with a single action.",
+    technologies: [
+      "NextJS",
+      "Upstash",
+      "Redis",
+      "Elysia",
+      "Tanstack",
+      "WebSockets",
+    ],
+    image: "/ephemeral.png",
+    links: {
+      external: "https://ephemeral-murex.vercel.app/",
+      github: "https://github.com/chowdhuryrz/ephemeral",
+    },
+  },
 ] as const;
 
 export const ABOUT_SECTIONS = [

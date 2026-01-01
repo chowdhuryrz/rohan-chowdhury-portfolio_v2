@@ -1,6 +1,12 @@
-import { ExternalLink, ArrowUpRight, Star, Download, Github } from 'lucide-react';
-import { EXPERIENCES, PROJECTS, ABOUT_SECTIONS } from '@/config/data';
-import { RESUME_URL, SOCIAL_LINKS, CONTACT } from '@/config/constants';
+import {
+  ExternalLink,
+  ArrowUpRight,
+  Star,
+  Download,
+  Github,
+} from "lucide-react";
+import { EXPERIENCES, PROJECTS, ABOUT_SECTIONS } from "@/config/data";
+import { RESUME_URL, SOCIAL_LINKS, CONTACT } from "@/config/constants";
 
 export const RightContent = () => {
   return (
@@ -9,23 +15,50 @@ export const RightContent = () => {
         {/* About Section */}
         <section id="about" data-section>
           <div className="space-y-4">
-              {ABOUT_SECTIONS.map((paragraph, index) => (
-                <p key={index} className="text-text-secondary leading-relaxed text-base font-light">
-                  {paragraph.split(/(\bAllstate Sales Group\b|\bFrontend Simplified\b|\bMcGill Scheduler\b|\bEmpor\b|\bReact\b|\bNext\.js\b|\bTypeScript\b|\bNode\.js\b|\bPostgreSQL\b|\bAWS\b)/).map((part, partIndex) => {
-                    if (['Allstate Sales Group', 'Frontend Simplified', 'McGill Scheduler', 'Empor', 'React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS'].includes(part)) {
-                      return <span key={partIndex} className="text-text-primary font-light">{part}</span>;
+            {ABOUT_SECTIONS.map((paragraph, index) => (
+              <p
+                key={index}
+                className="text-text-secondary leading-relaxed text-base font-light"
+              >
+                {paragraph
+                  .split(
+                    /(\bAllstate Sales Group\b|\bFrontend Simplified\b|\bMcGill Scheduler\b|\bEmpor\b|\bReact\b|\bNext\.js\b|\bTypeScript\b|\bNode\.js\b|\bPostgreSQL\b|\bAWS\b)/
+                  )
+                  .map((part, partIndex) => {
+                    if (
+                      [
+                        "Allstate Sales Group",
+                        "Frontend Simplified",
+                        "McGill Scheduler",
+                        "Empor",
+                        "React",
+                        "Next.js",
+                        "TypeScript",
+                        "Node.js",
+                        "PostgreSQL",
+                        "AWS",
+                      ].includes(part)
+                    ) {
+                      return (
+                        <span
+                          key={partIndex}
+                          className="text-text-primary font-light"
+                        >
+                          {part}
+                        </span>
+                      );
                     }
                     return part;
                   })}
-                </p>
-              ))}
+              </p>
+            ))}
           </div>
         </section>
 
         {/* Experience Section */}
         <section id="experience" data-section>
           <div className="space-y-8 xl:space-y-12">
-              {EXPERIENCES.map((experience, index) => (
+            {EXPERIENCES.map((experience, index) => (
               <div key={index} className="group experience-card">
                 <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
                   <div className="xl:col-span-1">
@@ -35,7 +68,7 @@ export const RightContent = () => {
                   </div>
                   <div className="xl:col-span-3">
                     <h3 className="experience-title-link">
-                      {experience.title} · {experience.company} 
+                      {experience.title} · {experience.company}
                       <ArrowUpRight className="w-4 h-4 opacity-70 experience-arrow" />
                     </h3>
                     <p className="text-text-secondary leading-relaxed text-sm font-light mb-3">
@@ -52,7 +85,7 @@ export const RightContent = () => {
                 </div>
               </div>
             ))}
-            
+
             <div className="mt-12">
               <a
                 href={RESUME_URL}
@@ -70,7 +103,7 @@ export const RightContent = () => {
         {/* Projects Section */}
         <section id="projects" data-section>
           <div className="space-y-8 xl:space-y-12">
-              {PROJECTS.map((project, index) => (
+            {PROJECTS.map((project, index) => (
               <div key={index} className="group experience-card">
                 <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
                   <div className="xl:col-span-1">
@@ -106,25 +139,29 @@ export const RightContent = () => {
                         )}
                       </div>
                     </h3>
-                    
+
                     <p className="text-text-secondary leading-relaxed text-sm font-light mb-3">
                       {project.description}
                     </p>
-                    
-                    {'stars' in project && (
+
+                    {"stars" in project && (
                       <div className="flex items-center gap-1 mb-3">
                         <Star className="w-4 h-4 text-text-muted" />
-                        <span className="text-text-muted text-sm">{project.stars.toLocaleString()}</span>
+                        <span className="text-text-muted text-sm">
+                          {project.stars.toLocaleString()}
+                        </span>
                       </div>
                     )}
-                    
-                    {'downloads' in project && (
+
+                    {"downloads" in project && (
                       <div className="flex items-center gap-1 mb-3">
                         <Download className="w-4 h-4 text-text-muted" />
-                        <span className="text-text-muted text-sm">{project.downloads}</span>
+                        <span className="text-text-muted text-sm">
+                          {project.downloads}
+                        </span>
                       </div>
                     )}
-                    
+
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
                         <span key={tech} className="tech-pill text-xs">
@@ -136,10 +173,10 @@ export const RightContent = () => {
                 </div>
               </div>
             ))}
-            
+
             <div className="mt-12">
               <a
-                href={SOCIAL_LINKS.find(link => link.name === 'github')?.href}
+                href={SOCIAL_LINKS.find((link) => link.name === "github")?.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white underline decoration-white/20 hover:decoration-white transition-colors"
@@ -150,11 +187,12 @@ export const RightContent = () => {
             </div>
           </div>
         </section>
-        
+
         {/* Contact */}
         <section className="pt-8 xl:pt-12">
           <p className="text-text-secondary leading-relaxed text-base font-light mb-6">
-            I'm always interested in new opportunities and interesting projects. Feel free to reach out if you'd like to connect.
+            I'm always interested in new opportunities and interesting projects.
+            Feel free to reach out if you'd like to connect.
           </p>
           <a
             href={`mailto:${CONTACT.email}`}
@@ -168,7 +206,8 @@ export const RightContent = () => {
         {/* Footer */}
         <footer className="pt-12 xl:pt-16 pb-16 xl:pb-24">
           <p className="text-white/50 text-sm leading-relaxed">
-            © {new Date().getFullYear()} Rohan Chowdhury. Designed and built with attention to detail.
+            © {new Date().getFullYear()} Rohan Chowdhury. Designed and built
+            with attention to detail.
           </p>
         </footer>
       </main>

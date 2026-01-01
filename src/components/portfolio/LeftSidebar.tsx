@@ -1,28 +1,29 @@
-import { Github, Linkedin, FileText } from 'lucide-react';
-import { NAVIGATION_ITEMS, SOCIAL_LINKS, CONTACT } from '@/config/constants';
+import { Github, Linkedin, FileText } from "lucide-react";
+import { NAVIGATION_ITEMS, SOCIAL_LINKS, CONTACT } from "@/config/constants";
 
 interface LeftSidebarProps {
   activeSection: string;
   onNavigate: (sectionId: string) => void;
 }
 
-export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => {
+export const LeftSidebar = ({
+  activeSection,
+  onNavigate,
+}: LeftSidebarProps) => {
   return (
     <div className="hidden xl:block xl:sticky xl:top-24 xl:h-[calc(100vh-6rem)] xl:flex xl:flex-col xl:justify-between xl:pb-24">
       <div>
         <h1 className="text-5xl font-semibold tracking-tight leading-[1.1] text-white mb-3">
           <button
-            onClick={() => onNavigate('about')}
+            onClick={() => onNavigate("about")}
             className="cursor-pointer"
           >
             {CONTACT.name}
           </button>
         </h1>
-        <h2 className="text-xl font-light text-white mb-4">
-          {CONTACT.title}
-        </h2>
+        <h2 className="text-xl font-light text-white mb-4">{CONTACT.title}</h2>
         <p className="text-base font-light text-text-secondary max-w-[320px] leading-normal mb-16">
-          I build accessible, pixel-perfect digital experiences for the web.
+          I build responsive, user-friendly, and innovative apps.
         </p>
 
         <nav className="mb-24">
@@ -31,7 +32,9 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
               <li key={item.id}>
                 <button
                   onClick={() => onNavigate(item.id)}
-                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                  className={`nav-link ${
+                    activeSection === item.id ? "active" : ""
+                  }`}
                 >
                   {item.label}
                 </button>
@@ -43,7 +46,12 @@ export const LeftSidebar = ({ activeSection, onNavigate }: LeftSidebarProps) => 
 
       <div className="flex gap-5">
         {SOCIAL_LINKS.map(({ name, href, label }) => {
-          const Icon = name === 'github' ? Github : name === 'linkedin' ? Linkedin : FileText;
+          const Icon =
+            name === "github"
+              ? Github
+              : name === "linkedin"
+              ? Linkedin
+              : FileText;
           return (
             <a
               key={name}

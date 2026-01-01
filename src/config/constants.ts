@@ -2,37 +2,37 @@ export const NAVIGATION_OFFSET = 96;
 export const SCROLL_THRESHOLD = 96;
 
 export const NAVIGATION_ITEMS = [
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
 ] as const;
 
 export const SOCIAL_LINKS = [
-  { 
-    name: 'github',
-    href: 'https://github.com/chowdhuryrz', 
-    label: 'GitHub' 
+  {
+    name: "github",
+    href: "https://github.com/chowdhuryrz",
+    label: "GitHub",
   },
-  { 
-    name: 'linkedin',
-    href: 'https://www.linkedin.com/in/rohancho/', 
-    label: 'LinkedIn' 
+  {
+    name: "linkedin",
+    href: "https://www.linkedin.com/in/rohancho/",
+    label: "LinkedIn",
   },
-  { 
-    name: 'resume',
-    href: '/Rohan_Chowdhury_Resume_Final.pdf', 
-    label: 'Resume' 
+  {
+    name: "resume",
+    href: "/Rohan_Chowdhury_Resume_Final.pdf",
+    label: "Resume",
   },
 ] as const;
 
 export const CONTACT = {
-  email: 'rmc.2917@gmail.com',
-  name: 'Rohan Chowdhury',
-  title: 'Software Engineer',
-  tagline: 'I build reliable, data-driven web apps and automations.',
+  email: "rmc.2917@gmail.com",
+  name: "Rohan Chowdhury",
+  title: "Software Engineer",
+  tagline: "I build responsive, user-friendly, and innovative apps",
 } as const;
 
-export const RESUME_URL = '/Rohan_Chowdhury_Resume_Final.pdf';
+export const RESUME_URL = "/Rohan_Chowdhury_Resume_Final.pdf";
 
-export type NavigationItem = typeof NAVIGATION_ITEMS[number];
-export type SocialLink = typeof SOCIAL_LINKS[number];
+export type NavigationItem = (typeof NAVIGATION_ITEMS)[number];
+export type SocialLink = (typeof SOCIAL_LINKS)[number];

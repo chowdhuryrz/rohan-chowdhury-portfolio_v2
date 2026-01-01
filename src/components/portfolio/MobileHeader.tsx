@@ -1,5 +1,5 @@
-import { Github, Linkedin, FileText } from 'lucide-react';
-import { CONTACT, SOCIAL_LINKS } from '@/config/constants';
+import { Github, Linkedin, FileText } from "lucide-react";
+import { CONTACT, SOCIAL_LINKS } from "@/config/constants";
 
 export const MobileHeader = () => {
   return (
@@ -11,12 +11,17 @@ export const MobileHeader = () => {
         {CONTACT.title}
       </h2>
       <p className="text-base sm:text-lg font-light text-text-secondary leading-relaxed mb-6 max-w-[90%]">
-        I build accessible, pixel-perfect digital experiences for the web.
+        I build responsive, user-friendly, and innovative apps.
       </p>
 
       <div className="flex gap-5 mb-24">
         {SOCIAL_LINKS.map(({ name, href, label }) => {
-          const Icon = name === 'github' ? Github : name === 'linkedin' ? Linkedin : FileText;
+          const Icon =
+            name === "github"
+              ? Github
+              : name === "linkedin"
+              ? Linkedin
+              : FileText;
           return (
             <a
               key={name}
